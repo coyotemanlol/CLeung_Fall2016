@@ -8,8 +8,7 @@ public class Calculate {
 		return z*z*z;
 	}
 	
-	public static double group(double y, double x) {
-		return (y + x) / 2;
+	public static double average(double y) {
+		return y + y / 2;
 	}
-	public static double group(double y, double x, double z); {
 }
