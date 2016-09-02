@@ -31,14 +31,6 @@ public class Calculate {
 		return (a / b) + "_1/" + b;
 	}
 	public static String foil(int a, int b, int c, int x, String n) {
-		return (a * c + "n^2 + " + 4 * (c + x)  + "n + " + b * x);
-	}
-	public static boolean isDivisibleBy(int a, int b) {
-		if (a / b > 1 && (a / b) > 2) { 
-			return true;
-		}
-		else {
-			return false;
-		}
+		return (a * c + "n^2 + " + 2*(c + x)  + "n + " + b * x);
 	}
 }

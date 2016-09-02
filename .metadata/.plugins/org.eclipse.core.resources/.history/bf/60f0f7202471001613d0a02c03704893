@@ -34,7 +34,7 @@ public class Calculate {
 		return (a * c + "n^2 + " + 4 * (c + x)  + "n + " + b * x);
 	}
 	public static boolean isDivisibleBy(int a, int b) {
-		if (a / b > 1 && (a / b) > 2) { 
+		if (a / b > 1) { 
 			return true;
 		}
 		else {

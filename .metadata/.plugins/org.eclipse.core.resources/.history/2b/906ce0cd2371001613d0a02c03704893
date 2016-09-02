@@ -21,6 +21,5 @@ public class DoMath {
 		System.out.println(impfrac);
 		System.out.println(mixednum);
 		System.out.println(f);
-		System.out.println(div);
 	}
 }
