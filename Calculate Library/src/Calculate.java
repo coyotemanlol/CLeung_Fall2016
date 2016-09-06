@@ -41,4 +41,9 @@ public class Calculate {
 			return false;
 		}
 	}
+	public static double AbsValue(double a) {
+		if(a < 0) {
+			return (a * -1);
+		}
+	}
 }
