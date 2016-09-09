@@ -9,7 +9,10 @@ public class DoMath {
 		double discriminant= Calculate.discriminant(1.0, 2.0, 3.0);
 		String impfrac= Calculate.toImproperFrac(4, 2, 3);
 		String mixednum= Calculate.toMixedNum(5, 2);
-		String f= Calculate.foil(2, 3, 6, 7, "n");
+		String f= Calculate.foil(2, 3, 6, -7, "n");
+		boolean div= Calculate.isDivisibleBy(5, 2);
+		double abs= Calculate.AbsValue(-5.0);
+		
 		System.out.println(x);
 		System.out.println(z);
 		System.out.println(y);
@@ -20,5 +23,7 @@ public class DoMath {
 		System.out.println(impfrac);
 		System.out.println(mixednum);
 		System.out.println(f);
+		System.out.println(div);
+		System.out.println(abs);
 	}
 }

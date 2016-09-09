@@ -11,8 +11,8 @@ public class DoMath {
 		String mixednum= Calculate.toMixedNum(5, 2);
 		String f= Calculate.foil(2, 3, 6, -7, "n");
 		boolean div= Calculate.isDivisibleBy(5, 2);
-		double abs= Calculate.AbsValue(-5);
-		
+		double abs= Calculate.AbsValue(-5.0);
+		int max= Calculate.Max2(1, 3);
 		System.out.println(x);
 		System.out.println(z);
 		System.out.println(y);
@@ -25,5 +25,7 @@ public class DoMath {
 		System.out.println(f);
 		System.out.println(div);
 		System.out.println(abs);
+		System.out.println(max);
 	}
+	
 }

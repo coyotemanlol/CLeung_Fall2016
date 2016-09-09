@@ -31,6 +31,30 @@ public class Calculate {
 		return (a / b) + "_1/" + b;
 	}
 	public static String foil(int a, int b, int c, int x, String n) {
-		return (a * c + "n^2 + "  + b * c + "n + " + b * x);
+		return (a * c + "n^2 + " + 4 * (c + x)  + "n + " + b * x);
 	}
-}
+	public static boolean isDivisibleBy(int a, int b) {
+		if (a / b > 1 && (a / b) > 2) { 
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	public static double AbsValue(double a) {
+		if(a < 0) {
+			return (a * -1);
+		} else {
+			return (a);
+		}
+	}
+	public static int Max2 (int x, int y){
+		if (x > y){
+			return x;
+		} else {
+			return y;
+		}
+	}
+		}
+		}
+	}

@@ -44,6 +44,15 @@ public class Calculate {
 	public static double AbsValue(double a) {
 		if(a < 0) {
 			return (a * -1);
+		} else {
+			return (a);
+		}
+	}
+	public static int Max2 (int x, int y){
+		if (x > y){
+			return x;
+		} else {
+			return y;
 		}
 	}
 }
