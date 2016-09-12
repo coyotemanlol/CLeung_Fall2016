@@ -13,6 +13,8 @@ public class DoMath {
 		boolean div= Calculate.isDivisibleBy(5, 2);
 		double abs= Calculate.AbsValue(-5.0);
 		int max= Calculate.Max2(1, 3);
+		double max1= Calculate.Max3(1.0, 2.0, 3.0);
+		
 		System.out.println(x);
 		System.out.println(z);
 		System.out.println(y);
@@ -26,6 +28,7 @@ public class DoMath {
 		System.out.println(div);
 		System.out.println(abs);
 		System.out.println(max);
+		System.out.println(max1);
 	}
 	
 }

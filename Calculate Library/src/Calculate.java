@@ -55,4 +55,18 @@ public class Calculate {
 			return y;
 		}
 	}
+	public static double Max3 (double x, double y, double z) {
+		if (y > x && y > z) {
+			return y;
+		}
+		else { 
+			if ( x > y) {
+			return x;
+			}
+			else return z;
+		}
+	public static double round2 (double x) {
+		int answer= 
+	}
+		}
 }
