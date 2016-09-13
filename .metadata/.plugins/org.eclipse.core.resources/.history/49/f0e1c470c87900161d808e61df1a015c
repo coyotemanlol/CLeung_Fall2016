@@ -41,5 +41,38 @@ public class Calculate {
 			return false;
 		}
 	}
-	
+	public static double AbsValue(double a) {
+		if(a < 0) {
+			return (a * -1);
+		} else {
+			return (a);
+		}
+	}
+	public static int Max2 (int x, int y){
+		if (x > y){
+			return x;
+		} else {
+			return y;
+		}
+	}
+	public static double Max3 (double x, double y, double z) {
+		if (y > x && y > z) {
+			return y;
+		}
+		else { 
+			if ( x > y) {
+			return x;
+			}
+			else return z;
+		}
+	}	
+	public static int min (int i, int o) {
+		if (i < o) {
+			return i;
+		}
+		if (i > o) {
+			return o;
+		}
+		
+	}
 }

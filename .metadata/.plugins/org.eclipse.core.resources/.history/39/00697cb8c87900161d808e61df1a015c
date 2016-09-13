@@ -66,28 +66,12 @@ public class Calculate {
 			else return z;
 		}
 	}	
-	public static int min (int i, int j){
-		if (i < j){
+	public static int min (int i, int o){
+		if (i < o){
 			return i;
 		}
-		else{
-			return j;
+		if (i > o){
+			return o;
 		}
-	}
-	public static double round2 (double x) {
-		int answer= ((int) (x * 100));
-		if ((x * 100) - answer >= 0.5) {
-			double p = ((int) ((x * 100) + 1) / 100.00);
-			return p;
-		}
-		else {
-			double rounddown= ((int) (x * 100) / 100.0);
-			return rounddown;
-		}
-	}
-	public static double exponent (double x, int y) {
-		for (int y= 2; y >= 0; y++) {
-			if ()
-				return ;
 	}
 }
