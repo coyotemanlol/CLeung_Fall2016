@@ -92,5 +92,42 @@ public class Calculate {
 		}
 		return answer; 
 	}
-	
+	 public static int factorial(int x) {
+		 
+	        for(int i = (x - 1); i <= x && i > 0; i--)
+	        {
+	            x *= i;
+	        }
+	        return x;
+	 }
+	 public static boolean isPrime(int num) {
+	        if (num % 2 == 0)
+	            return false;
+	        for (int i = 3; i * i <= num; i += 2)
+	            if (num % i == 0) return false;
+	        return true;
+	  }  
+	 public static int greatestCommon(int a, int b) {
+         while (a != 0 && b != 0) {
+             if (a >= b){
+                 a = a - b;
+             }
+             else
+                 b = b - a;
+         }
+         if (a == 0) return b;
+         else return a;
+     }
+	 public static double sqrt(double number) {
+			double t;
+		 
+			double squareRoot = number / 2;
+		 
+			do {
+				t = squareRoot;
+				squareRoot = (t + (number / t)) / 2;
+			} while ((t - squareRoot) != 0);
+		 
+			return squareRoot;
+		}
 }

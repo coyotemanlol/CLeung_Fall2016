@@ -17,6 +17,11 @@ public class DoMath {
 		int min= Calculate.min(3, 5);
 		double round= Calculate.round2(7.676);
 		double exp= Calculate.exponent(2.0, 2);
+		int fact= Calculate.factorial(5);
+		boolean prime= Calculate.isPrime(7);
+		int gcf= Calculate.greatestCommon(18, 12);
+		double sqroot= Calculate.sqrt(121);
+		
 		System.out.println(x);
 		System.out.println(z);
 		System.out.println(y);
@@ -34,6 +39,10 @@ public class DoMath {
 		System.out.println(min);
 		System.out.println(round);
 		System.out.println(exp);
+		System.out.println(fact);
+		System.out.println(prime);
+		System.out.println(gcf);
+		System.out.println(sqroot);
 	}
 	
 }

@@ -86,8 +86,11 @@ public class Calculate {
 		}
 	}
 	public static double exponent (double x, int y) {
-		for (int z= 2; z >= 0; z++) {
-			
+		double answer = 1.0;
+		for (int z= 0; z >= y; z++) {
+			answer *= x;
 		}
+		return answer; 
 	}
+	
 }

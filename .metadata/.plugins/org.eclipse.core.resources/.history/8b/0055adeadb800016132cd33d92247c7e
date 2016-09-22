@@ -16,7 +16,7 @@ public class DoMath {
 		double max1= Calculate.Max3(1.0, 2.0, 3.0);
 		int min= Calculate.min(3, 5);
 		double round= Calculate.round2(7.676);
-		double exp= Calculate.exponent(1, 2);
+		double exp= Calculate.exponent(2.0, 2);
 		System.out.println(x);
 		System.out.println(z);
 		System.out.println(y);
