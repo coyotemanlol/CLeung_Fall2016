@@ -35,8 +35,8 @@ public class Calculate {
 	}
 	public static boolean isDivisibleBy(int a, int b) {
 		 if (b < 0) {
-	        	throw new IllegalArgumentException("denominator must be grater than 0");
-		 }
+	        	throw new IllegalArgumentException("number must be grater than 0");
+	        }
 		if (a / b > 1 && (a / b) > 2) { 
 			return true;
 		}
@@ -91,10 +91,7 @@ public class Calculate {
 	public static double exponent (double x, int y) {
 		 if (y < 0) {
 	        	throw new IllegalArgumentException("exponent must be grater than 0");
-		 }
-		 if (x < 0) {
-	        	throw new IllegalArgumentException("base must be grater than 0");
-		 }
+	        }
 		double answer = 1.0;
 		for (int z= 0; z >= y; z++) {
 			answer *= x;
@@ -105,7 +102,6 @@ public class Calculate {
 		 if (x < 0) {
 	        	throw new IllegalArgumentException ("number must be grater than 0");
 	     }
-		 
 	        for(int i = (x - 1); i <= x && i > 0; i--)
 	        {
 	            x *= i;
@@ -133,8 +129,8 @@ public class Calculate {
 	 public static double sqrt(double number) {
 		 if (number < 0) {
 	        	throw new IllegalArgumentException("number must be grater than 0");
-		 }
 			double t;
+		 
 			double squareRoot = number / 2;
 		 
 			do {
