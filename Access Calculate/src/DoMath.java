@@ -22,6 +22,7 @@ public class DoMath {
 		int gcf= Calculate.greatestCommon(18, 12);
 		double sqroot= Calculate.sqrt(121);
 		
+		
 		System.out.println(x);
 		System.out.println(z);
 		System.out.println(y);

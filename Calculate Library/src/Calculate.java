@@ -93,6 +93,9 @@ public class Calculate {
 		return answer; 
 	}
 	 public static int factorial(int x) {
+		 if (x < 0) {
+	        	throw new IllegalArguementException ("number must be grater than 0");
+	     }
 		 
 	        for(int i = (x - 1); i <= x && i > 0; i--)
 	        {
