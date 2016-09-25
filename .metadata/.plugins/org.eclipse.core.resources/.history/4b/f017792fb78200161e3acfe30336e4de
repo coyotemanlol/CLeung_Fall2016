@@ -132,7 +132,7 @@ public class Calculate {
      }
 	 public static double sqrt(double number) {
 		 if (number < 0) {
-	        	throw new IllegalArgumentException("number must be more than 0");
+	        	throw new IllegalArgumentException("number must be grater than 0");
 		 }
 			double t;
 			double squareRoot = number / 2;
@@ -144,26 +144,29 @@ public class Calculate {
 		 
 			return squareRoot;
 	 }
-	 public static String quadForm(int a, int b, int c) {
-		 double ad = a;
-		 double bd = b;
-		 double cd = c;
-		 double xd = 0;
-		 double d = Calculate.discriminant(ad, bd, cd);
-		 
-	    if(d > 0) {
-	    	return "no real roots";
-	    }
-	    else {
-	    	if (d == 0) {
-	    		xd = Calculate.round2((-b/(2*a)));
-	    		return "" + xd;
-	    	}
-	    	else {
-	    		double firstroot = Calculate.round2((- b + Calculate.sqrt(d))/(2*a));
-	    		double secondroot = Calculate.round2((- b - Calculate.sqrt(d))/(2*a));
-	    		return "roots = " + firstroot + " " + secondroot;
-	    	}
-	    }
-	 }
+	 public static int quadForm(int a, int b, int c) {
+		 double x = a;
+		 double y = b;
+		 double z = c;
+		 double d = Calculate.discriminant(x, y, z);
+	    if(d > 0)
+	       {
+	           System.out.println("Roots are real and unequal");
+	           double root1 = ( - b + Math.sqrt(d))/(2*a);
+	           double root2 = (-b - Math.sqrt(d))/(2*a);
+	           System.out.println("First root is:"+root1);
+	           System.out.println("Second root is:"+root2);
+	       }
+	       else if(d == 0)
+	       {
+	           System.out.println("Roots are real and equal");
+	         double  root1 = (-b+Math.sqrt(d))/(2*a);
+	           System.out.println("Root:"+root1);
+	       }
+	       else
+	       {
+	           System.out.println("Roots are imaginary");
+	       }
+	   }
+
 }

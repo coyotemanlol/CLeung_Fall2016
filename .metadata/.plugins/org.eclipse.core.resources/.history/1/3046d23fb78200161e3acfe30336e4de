@@ -132,7 +132,7 @@ public class Calculate {
      }
 	 public static double sqrt(double number) {
 		 if (number < 0) {
-	        	throw new IllegalArgumentException("number must be more than 0");
+	        	throw new IllegalArgumentException("number must be grater than 0");
 		 }
 			double t;
 			double squareRoot = number / 2;
@@ -160,10 +160,10 @@ public class Calculate {
 	    		return "" + xd;
 	    	}
 	    	else {
-	    		double firstroot = Calculate.round2((- b + Calculate.sqrt(d))/(2*a));
-	    		double secondroot = Calculate.round2((- b - Calculate.sqrt(d))/(2*a));
+	    		double firstroot = Calculate.round2(( - b + Calculate.sqrt(d))/(2*a));
+	    		double secondroot = Calculate.round2(( - b - Calculate.sqrt(d))/(2*a));
 	    		return "roots = " + firstroot + " " + secondroot;
 	    	}
 	    }
-	 }
+
 }

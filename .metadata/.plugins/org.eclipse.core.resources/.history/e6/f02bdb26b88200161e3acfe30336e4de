@@ -43,7 +43,7 @@ public class DoMath {
 		System.out.println(prime);
 		System.out.println(gcf);
 		System.out.println(sqroot);
-		System.out.println(Calculate.quadForm(1, 2, 3));
+		System.out.println(Calculate.quadForm(7, 12, 23);
 	}
 	
 }

@@ -160,8 +160,8 @@ public class Calculate {
 	    		return "" + xd;
 	    	}
 	    	else {
-	    		double firstroot = Calculate.round2((- b + Calculate.sqrt(d))/(2*a));
-	    		double secondroot = Calculate.round2((- b - Calculate.sqrt(d))/(2*a));
+	    		double firstroot = Calculate.round2(( - b + Calculate.sqrt(d))/(2*a));
+	    		double secondroot = Calculate.round2(( - b - Calculate.sqrt(d))/(2*a));
 	    		return "roots = " + firstroot + " " + secondroot;
 	    	}
 	    }

@@ -21,6 +21,7 @@ public class DoMath {
 		boolean prime= Calculate.isPrime(7);
 		int gcf= Calculate.greatestCommon(18, 12);
 		double sqroot= Calculate.sqrt(121);
+		String quad= Calculate.quadForm(1, 2, 3);
 		
 		System.out.println(x);
 		System.out.println(z);
@@ -43,7 +44,7 @@ public class DoMath {
 		System.out.println(prime);
 		System.out.println(gcf);
 		System.out.println(sqroot);
-		System.out.println(Calculate.quadForm(1, 2, 3));
+		System.out.println(quad);
 	}
 	
 }
