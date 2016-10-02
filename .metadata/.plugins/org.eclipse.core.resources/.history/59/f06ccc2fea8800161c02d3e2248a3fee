@@ -1,0 +1,39 @@
+import java.util.*;
+public class Collab {
+	public static void main (String[] args){
+		int max;
+		int min;
+		int maxEven;
+		int sumEven = 0;
+		Scanner userInput = new Scanner(System.in);
+		System.out.println("How many numbers are you going to import?");
+		int totalNum = userInput.nextInt();
+		for (int num = 1; num <= totalNum; num++){
+			System.out.println("Enter your number: ");
+			int nextNum = userInput.nextInt();
+			max = nextNum;
+			min = nextNum;
+			if (nextNum > max){
+				max = nextNum;
+			}
+			System.out.println("The largest number: " + max);
+			if (nextNum < min){
+				min = nextNum;
+			}
+			System.out.println("The smallest number: " + min);
+			if (nextNum % 2 == 0){
+				maxEven = nextNum;
+				sumEven += nextNum;
+				if (nextNum > maxEven){
+					maxEven = nextNum;
+				}
+				System.out.println("THe sum of all even numbers: " + sumEven);
+				System.out.println("The largest even number: " + maxEven);
+			}
+		}
+	}
+
+}
+
+
+
