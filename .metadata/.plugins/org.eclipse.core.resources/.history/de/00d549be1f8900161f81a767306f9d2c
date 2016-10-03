@@ -1,4 +1,4 @@
-// Collaborative Programming Exercise - Cody Leung Pd2. 10/2/16
+// Collaborative Programming Exercise - Cody Leung Pd2. 
 import java.util.Scanner;
 public class Collab {
 	public static void main(String[] args) {
