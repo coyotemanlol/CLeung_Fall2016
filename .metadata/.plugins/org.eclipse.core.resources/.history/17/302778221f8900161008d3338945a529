@@ -26,9 +26,9 @@ public class Collab {
 			}
 		}
 	}
+	System.out.println("Sum of All Even Numbers Is : " + nextEven);
 	System.out.println("Min Number Is : " + min);
 	System.out.println("Max Number Is : " +  max);
-	System.out.println("Sum of All Even Numbers Is : " + nextEven);
 	System.out.println("Max Even Number Is : " +  maxEven);
 	
 	}

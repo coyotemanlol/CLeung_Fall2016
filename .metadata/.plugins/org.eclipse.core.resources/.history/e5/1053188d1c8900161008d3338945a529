@@ -1,0 +1,29 @@
+// Collaborative Programming Exercise - Cody Leung Pd2. 
+import java.util.Scanner;
+public class Collab{
+	public static void main(String[] args) {
+		int next2 = 0;
+		Scanner userInput = new Scanner(System.in);
+		System.out.println("How Many Numbers Are You Going To Enter?");
+		int totalNum = userInput.nextInt();
+		System.out.println("Print Any Number.");
+		int min = userInput.nextInt();
+		int max = 0;
+		System.out.println("Please Enter The Number(s): ");
+	for(int i = 1;i<=totalNum ;i++){	
+		int next = userInput.nextInt();
+		if(next>max){
+			max = next;
+		}
+		if(next<min){
+				min = next;			
+		}
+		if(next%2 == 0){
+			next2  = next2 + next; 
+		}
+	}
+	System.out.println("Sum Of The Even Numbers: " + next2);
+	System.out.println("The Min Number Is: " + min);
+	System.out.println("The Max Number Is: " +  max);
+	}	
+}

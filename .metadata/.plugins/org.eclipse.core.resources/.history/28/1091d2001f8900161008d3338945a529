@@ -7,9 +7,9 @@ public class Collab {
 		System.out.println("How many numbers are you going to enter here?");
 		int totalNum = userInput.nextInt();
 		System.out.println("Print Your Favorite Number Here (This Number is Irrelevent and Will Not Affect the Outcomes.");
-		int maxEven = 0;
-		int max = 0;
 		int min = userInput.nextInt(); 
+		int max = 0; 
+		int maxEven = 0;
 		System.out.println("Please Enter Your Numbers): ");
 	for(int i = 1;i<=totalNum ;i++){
 		int next = userInput.nextInt();
@@ -25,11 +25,14 @@ public class Collab {
 				maxEven = next;
 			}
 		}
+		userInput.close();
 	}
-	System.out.println("Min Number Is : " + min);
-	System.out.println("Max Number Is : " +  max);
-	System.out.println("Sum of All Even Numbers Is : " + nextEven);
-	System.out.println("Max Even Number Is : " +  maxEven);
+	System.out.println("Sum of even numbers: " + nextEven);
+	System.out.println("This is the min number: " + min);
+	System.out.println("This is the max number: " +  max);
+	System.out.println("This is the max even number: " +  maxEven);
 	
 	}
+	
+	
 }
