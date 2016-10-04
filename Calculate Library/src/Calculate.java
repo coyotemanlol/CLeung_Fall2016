@@ -1,38 +1,48 @@
+// Calculate Library - Cody Leung 1st Period 10/4/16 (Re-editted Submission)
+
 public class Calculate {
+	// square returns the square of the value passed
 	public static double square(double x) {
 		return x*x;
 	}
-
+	// cube returns the cube of the value passed
 	public static double cube(double z) {
 		return z*z*z;
 	}
-	
-	public static double group(double y, double x) {
+	// average returns the average of the values passed to it
+	public static double average(double y, double x) {
 		return (y + x) / 2;
 	}
-	public static double group(double y, double x, double z) {
+	public static double average2(double y, double x, double z) {
 		return (y + x + z) / 3;
 	}
+	// toDegrees converts an angle measure given in radians into degrees
 	public static double toDegrees(double rad) {
 		double pi= 3.14159;
 		return rad/pi * 180;
 	}
+	// toRadians converts an angle measure given in degrees into radians
 	public static double toRadians(double deg) {
 		double pi= 3.14159;
 		return deg/180 * pi;
 	}
+	// discriminant provides the coefficients of a quadratic equation in standard form (a,b, and c) and returns the value of the discriminant 
 	public static double discriminant(double a, double b, double c) {
 		return b * b - 4 *  a * b;
 	}
+	// toImproperFrac converts mixed number into an improper fraction
 	public static String toImproperFrac(int a, int b, int c) {
 		return (a * c + b) + "/" + c;
 	}
+	// toMixedNum converts an improper fraction into a mixed number
 	public static String toMixedNum(int a, int b) {
 		return (a / b) + "_1/" + b;
 	}
+	// foil converts a binomial multiplication of the form (ax + b)(cx + d) into a quadratic equation of the form ax^2 + bx + c
 	public static String foil(int a, int b, int c, int x, String n) {
 		return (a * c + "n^2 + " + 4 * (c + x)  + "n + " + b * x);
 	}
+	// isDivisibleBy determines whether or not one integer is evenly divisible by another
 	public static boolean isDivisibleBy(int a, int b) {
 		 if (b < 0) {
 	        	throw new IllegalArgumentException("denominator must be grater than 0");
@@ -44,21 +54,22 @@ public class Calculate {
 			return false;
 		}
 	}
-	public static double AbsValue(double a) {
+	// absValue returns the absolute value of the numbeer passed
+	public static double absValue(double a) {
 		if(a < 0) {
 			return (a * -1);
 		} else {
 			return (a);
 		}
 	}
-	public static int Max2 (int x, int y){
+	public static int max2 (int x, int y){
 		if (x > y){
 			return x;
 		} else {
 			return y;
 		}
 	}
-	public static double Max3 (double x, double y, double z) {
+	public static double max3 (double x, double y, double z) {
 		if (y > x && y > z) {
 			return y;
 		}
@@ -68,7 +79,8 @@ public class Calculate {
 			}
 			else return z;
 		}
-	}	
+	}
+	// min returns the larger of the values passed
 	public static int min (int i, int j){
 		if (i < j){
 			return i;
@@ -77,6 +89,7 @@ public class Calculate {
 			return j;
 		}
 	}
+	// round 2  rounds a double correctly to two decimal places and returns a double
 	public static double round2 (double x) {
 		int answer= ((int) (x * 100));
 		if ((x * 100) - answer >= 0.5) {
@@ -88,6 +101,7 @@ public class Calculate {
 			return rounddown;
 		}
 	}
+	// exponent raises a value to a positive integer power
 	public static double exponent (double x, int y) {
 		 if (y < 0) {
 	        	throw new IllegalArgumentException("exponent must be grater than 0");
@@ -101,6 +115,7 @@ public class Calculate {
 		}
 		return answer; 
 	}
+	// factorial returns the factorial of the value passed
 	 public static int factorial(int x) {
 		 if (x < 0) {
 	        	throw new IllegalArgumentException ("number must be grater than 0");
@@ -112,6 +127,7 @@ public class Calculate {
 	        }
 	        return x;
 	 }
+	 // isPrime determines whether or not an integer is prime
 	 public static boolean isPrime(int num) {
 	        if (num % 2 == 0)
 	            return false;
@@ -119,7 +135,8 @@ public class Calculate {
 	            if (num % i == 0) return false;
 	        return true;
 	  }  
-	 public static int greatestCommon(int a, int b) {
+	 // gcf finds the greatest common factor of two integers
+	 public static int gcf(int a, int b) {
          while (a != 0 && b != 0) {
              if (a >= b){
                  a = a - b;
@@ -130,6 +147,7 @@ public class Calculate {
          if (a == 0) return b;
          else return a;
      }
+	 // sqrt returns an appoximation of the square root of the value passes, accurate to two decimal spaces  
 	 public static double sqrt(double number) {
 		 if (number < 0) {
 	        	throw new IllegalArgumentException("number must be more than 0");
@@ -144,6 +162,7 @@ public class Calculate {
 		 
 			return squareRoot;
 	 }
+// quadForm uses the coefficients of a quadratic equation in standard form and uses the quadratic formula to approximate the real roots, if any.	 
 	 public static String quadForm(int a, int b, int c) {
 		 double ad = a;
 		 double bd = b;
