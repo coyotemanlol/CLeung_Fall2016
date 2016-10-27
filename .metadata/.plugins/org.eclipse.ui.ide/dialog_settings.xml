@@ -12,6 +12,8 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\APCS1\Documents\GitHub\CLeung_Fall2016\Srting Split"/>
+			<item value="C:\Users\APCS1\Documents\GitHub\CLeung_Fall2016\SplitString"/>
 			<item value="C:\Users\APCS1\Desktop\magpie\Magpie3"/>
 			<item value="C:\Users\APCS1\Desktop\magpie"/>
 		</list>
