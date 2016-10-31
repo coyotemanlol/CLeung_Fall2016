@@ -5,12 +5,6 @@ public class LotsOfCopies {
 		String strMain = "APCS";
 		int[] arrMain = {1, 2, 3, 4, 5};
 	}
-	
-	
-	
-	
-	
-	
 	public static void changeMe (int x, String str, int[] arr)
 		int numb = 6;
 		String str = "Apcs";
