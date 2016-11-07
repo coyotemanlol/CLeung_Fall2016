@@ -1,8 +1,10 @@
-// Cody Leung APCS1 ArraysLab3
+// Cody Leung 
 
 package arrays_materials;
+
 import java.util.Arrays;
 import java.util.List;
+
 public class ArraysLab3 
 {
 	/*
@@ -15,11 +17,11 @@ public class ArraysLab3
 		assert (arr1.length > 0);
 		assert (arr2.length > 0);
 		assert (arr1.length == arr2.length);
-			int [] sum = new int[arr1.length];
+			int [] arr3 = new int[arr1.length];
 		for (int y= 0; y < arr1.length -1 ; y ++ ) {	
-			sum[y] = arr1[y] + arr2[y]; 
+			arr3[y] = arr1[y] + arr2[y]; 
 		}
-		return sum;
+		
 	}
 	
 	/*
@@ -41,18 +43,16 @@ public class ArraysLab3
 	 * except for the element at index idx (thus, the returned array has a length of arr.length – 1).  
 	 * You can assume arr has at least two elements.
 	 */
-	public static int[] remove(int[] arr, int idx)
-	{
+	public static int[] remove(int[] arr, int idx) {
 		assert (arr.length >= 2);
-		
-		int[] arr3 = new int[arr.length - 1];
-		for (int i = 0; i < idx; i++){
-			arr3[i] = arr[i];
+		if (idx <= arr.length-1) {
+			List<int[]> arr3 = Arrays.asList(arr);
+			arr3.remove(Arrays.asList(idx));
 		}
-		for (int i = idx + 1; i <= arr.length-1; i++){
-			arr3[i-1] = arr[i];
+		else {
+			return null;
 		}
-		return arr3;
+					
 	}
 	
 	/*
@@ -78,15 +78,13 @@ public class ArraysLab3
 	 * (element 0 goes to element 1, element 1 goes to element 2, …, element n-1 goes to element 0).  
 	 * You can assume arr has at least one element.
 	 */
-	public static void rotateRight(int[] arr)
-	{
+	public static void rotateRight(int[] arr) {
 		assert (arr.length > 0);
-		int last = arr[arr.length - 1];
-		for (int i = 0; i < arr.length - 1; i++) {
-			arr[i] = arr[i-1];
+		for(int x=0; x <= arr.length-2; x++) {
+			
 		}
-		arr[0] = last;
 	}
+
 	/*
 	 * Write a main method that will 
 		Contain
@@ -109,17 +107,8 @@ public class ArraysLab3
 				sumOfEvens (an int you don’t need Arrays.toString)
 				a1
 	 */
+	
 	public static void main(String[] args) {
-		int[] a = {5,10,15,20,25,30,35,40};
 		
-		int[] b = {7,14,21,28,35,42,49,56};
-		
-		System.out.println(Arrays.toString(sum(a,b)));
-		
-		System.out.println(Arrays.toString(append(a,1)));
-		
-		System.out.println(Arrays.toString(remove(a,2)));
-		
-		System.out.println(sumEven(a));
 	}
 }
