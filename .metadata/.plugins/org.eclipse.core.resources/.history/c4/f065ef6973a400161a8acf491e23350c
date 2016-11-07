@@ -1,9 +1,6 @@
-// Cody Leung 
-
 package arrays_materials;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class ArraysLab3 
 {
@@ -32,9 +29,9 @@ public class ArraysLab3
 	 */
 	public static int[] append(int[] arr, int num) {
 		assert (arr.length > 0);
-		int[] arr3 = new int[arr.length + 1];	
-		arr3[arr3.length-1] = num; 
-		return arr3;
+		
+		
+	
 	}
 	
 	/*
@@ -45,14 +42,7 @@ public class ArraysLab3
 	 */
 	public static int[] remove(int[] arr, int idx) {
 		assert (arr.length >= 2);
-		if (idx <= arr.length-1) {
-			List<int[]> arr3 = Arrays.asList(arr);
-			arr3.remove(Arrays.asList(idx));
-		}
-		else {
-			return null;
-		}
-					
+		
 	}
 	
 	/*
@@ -62,13 +52,7 @@ public class ArraysLab3
 	 */
 	public static int sumEven(int[] arr) {
 		assert (arr.length > 0);
-		int evens = 0;
-		for(int i = 0; i < arr.length; i++)
-		{
-			if(arr[i] % 2 == 0)
-				evens = evens + arr[i];
-		}
-		return evens;
+		
 	}
 	
 	/*
@@ -80,9 +64,7 @@ public class ArraysLab3
 	 */
 	public static void rotateRight(int[] arr) {
 		assert (arr.length > 0);
-		for(int x=0; x <= arr.length-2; x++) {
-			
-		}
+		
 	}
 
 	/*
