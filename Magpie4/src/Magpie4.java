@@ -46,7 +46,7 @@ public class Magpie4 {
 		}
 		else if (findKeyword(statement, "dab", 0) >= 0) {
 				return response = "My robotic dabs are so lit";
-		}else if (findKeyword(statement, "racist", 0) >= 0) {
+		}else if (findKeyword(statement, "lmao", 0) >= 0) {
 					return response = "Black lives matter.";
 		}else if (findKeyword(statement, "hello", 0) >= 0) {
 			return response = "suuh duude";

@@ -140,7 +140,7 @@ import java.util.Scanner;
 	               whole = statement3;
 	               dem = "1";
 	              }
-	              //return statement3 + ("(Whole: " + whole +" Numerator:" + numerator +" Denominator:" + dem + ")");
+	              	//return statement3 + ("(Whole: " + whole +" Numerator:" + numerator +" Denominator:" + dem + ")");
 	              return "whole:" + whole +" numerator:" + numerator+" denominator:" + dem;
 	            }
 	        return "";
