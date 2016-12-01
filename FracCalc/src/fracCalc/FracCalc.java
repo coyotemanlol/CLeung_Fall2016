@@ -75,7 +75,7 @@ import java.util.Scanner;
 		               whole = statement3;
 		               denominator = "1";
 		              }
-		              		//  returns statement3 + ("(Whole:" + whole +" Numerator:" + num +" Denominator:" + dem + ")");  
+		              					//  returns statement3 + ("(Whole:" + whole +" Numerator:" + num +" Denominator:" + dem + ")");  
 		              return "whole:" + whole +" numerator:" + numerator +" denominator:" + denominator;
 		               
 		            } 
@@ -107,7 +107,7 @@ import java.util.Scanner;
 	                  whole = statement3;
 	                  dem = "1";
 	                 }
-	            //Returns statement3 + ("(Whole:" + whole +" Numerator:" + num +" Denominator:" + dem + ")"); 
+	              				//Returns statement3 + ("(Whole:" + whole +" Numerator:" + num +" Denominator:" + dem + ")"); 
 	              return "whole:" + whole +" numerator:" + numerator +" denominator:" + dem;
 		     } 
 	     		else if(input.indexOf("*")>=0) {			 // equation = multiplication
@@ -127,8 +127,7 @@ import java.util.Scanner;
 	               String frac = split2[1];
 	               String[] split3 = frac.split("/");
 	               numerator = split3[0];
-	               dem = split3[1];
-	               
+	               dem = split3[1];  
 	              } 
 	              else if (statement3.indexOf("/")>=0) {
 	               String[] split2 = statement3.split("/");
@@ -140,7 +139,7 @@ import java.util.Scanner;
 	               whole = statement3;
 	               dem = "1";
 	              }
-	              	//return statement3 + ("(Whole: " + whole +" Numerator:" + numerator +" Denominator:" + dem + ")");
+	              					//return statement3 + ("(Whole: " + whole +" Numerator:" + numerator +" Denominator:" + dem + ")");
 	              return "whole:" + whole +" numerator:" + numerator+" denominator:" + dem;
 	            }
 	        return "";
