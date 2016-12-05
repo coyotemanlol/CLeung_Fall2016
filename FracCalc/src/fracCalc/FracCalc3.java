@@ -1,9 +1,8 @@
-// Cody Leung - Frac Calc - Comp Sci 11/21/16
 package fracCalc;
 import java.util.Arrays; 
 import java.util.Scanner;
 
-	public class FracCalc {
+	public class FracCalc3 {
 		
 		public static void main(String []args) {
 			Scanner fracReader = new Scanner(System.in);
@@ -14,7 +13,7 @@ import java.util.Scanner;
 			System.out.println(produceAnswer("5_3/4 + 6_5/8"));   //test
 		}
 		public static String produceAnswer(String input) {
-			if(input.indexOf("+")>=0) {
+			if(input.indexOf("+")>=0) {			// equation = addition
 				  String[] split1 = input.split(" ");
 				  String statement1 = split1[0];
 				   String statement2 = split1[1];
@@ -107,7 +106,7 @@ import java.util.Scanner;
 	                  whole = statement3;
 	                  denominator = "1";
 	                 }
-	              				//Returns statement3 + ("(Whole:" + whole +" Numerator:" + num +" Denominator:" + denominator + ")"); 
+	              				//Returns statement3 + ("(Whole:" + whole +" Numerator:" + numerator +" Denominator:" + denominator + ")"); 
 	              return "whole:" + whole +" numerator:" + numerator +" denominator:" + denominator;
 		     } 
 	     		else if(input.indexOf("*")>=0) {			 // equation = multiplication
@@ -143,5 +142,18 @@ import java.util.Scanner;
 	              return "whole:" + whole +" numerator:" + numerator+" denominator:" + denominator;
 	            }
 	        return "";
-	    }      
-	}
+		}	        	
+	     
+			//change mixed numbers to improper fractions
+			public static String toImproperFrac(String a,  b, int c) {
+				return (a * c + b) + "/" + c;
+				return ((whole * denominator) + numerator) "/" denominator;
+	        
+		// Create a method for each of the functions
+		Addition == ((numerator1 * denominator2) + (numerator2 * denominator1) /(denominator1 * denominator2));
+		Subtraction == ((numerator1*denominator2 - numerator2*denominator1) / (denominator1*denominator2));
+		Multiplication == ((numerator1*numerator2) / (denominator1*denominator2));
+		Division == (denominator2 * numerator1) / (denominator1 * numerator2));
+}
+}
+	
