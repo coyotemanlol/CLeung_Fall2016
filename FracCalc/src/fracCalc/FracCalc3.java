@@ -142,18 +142,32 @@ import java.util.Scanner;
 	              return "whole:" + whole +" numerator:" + numerator+" denominator:" + denominator;
 	            }
 	        return "";
-		}	        	
-	     
+		}	 
+		// ///////////////////////////////////////////////////////////////////////////
+		
+		public static int[] toImproperFrac (int numerator, int denominator, int whole) {
+			if (whole >0) {
+				(whole * numerator) + denomoinator) / (denominator));
+			}
+		}
+		
+		public static int[] parseOperand (String operand){
+			String operandx = operand.split("_");
+		}
+	     public static produceAnswer(String)
 			//change mixed numbers to improper fractions
 			public static String toImproperFrac(String a,  b, int c) {
 				return (a * c + b) + "/" + c;
 				return ((whole * denominator) + numerator) "/" denominator;
 	        
+			
+				
+				
 		// Create a method for each of the functions
-		Addition == ((numerator1 * denominator2) + (numerator2 * denominator1) /(denominator1 * denominator2));
-		Subtraction == ((numerator1*denominator2 - numerator2*denominator1) / (denominator1*denominator2));
-		Multiplication == ((numerator1*numerator2) / (denominator1*denominator2));
-		Division == (denominator2 * numerator1) / (denominator1 * numerator2));
+	//	Addition == ((numerator1 * denominator2) + (numerator2 * denominator1) /(denominator1 * denominator2));
+	//	Subtraction == ((numerator1*denominator2 - numerator2*denominator1) / (denominator1*denominator2));
+	//	Multiplication == ((numerator1*numerator2) / (denominator1*denominator2));
+	//	Division == (denominator2 * numerator1) / (denominator1 * numerator2));
 }
-}
+
 	
