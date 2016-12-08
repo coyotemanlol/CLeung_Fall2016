@@ -1,3 +1,5 @@
+// Cody Leung - AP CS1 - 
+
 package fracCalc;
 import java.util.Arrays; 
 import java.util.Scanner;
@@ -142,21 +144,35 @@ import java.util.Scanner;
 	              return "whole:" + whole +" numerator:" + numerator+" denominator:" + denominator;
 	            }
 	        return "";
-		}	 
+		}
 		// ///////////////////////////////////////////////////////////////////////////
-		
+		// toImproperFrac
 		public static int[] toImproperFrac (int numerator, int denominator, int whole) {
+			int impropFrac;
 			if (whole >0) {
-				(whole * numerator) + denomoinator) / (denominator));
+				impropFrac =((whole * numerator) + denominator) / (denominator);
 			}
 		}
-		
+		// parseOperand	
 		public static int[] parseOperand (String operand){
-			String operandx = operand.split("_");
+			String[] answer;
+			if (operand.indexOf("+") >=0) {
+				answer = operand.split("+");
+			if (operand.indexOf("*") >=0) {
+					answer = operand.split("*");
+				}
+			if (operand.indexOf("-") >=0) {
+					answer = operand.split("-");
+				}
+			if (operand.indexOf("/") >=0) {
+					answer = operand.split("/");
+				}
+			}
 		}
-	     public static produceAnswer(String)
+	     public static int[] produceAnswer (String operators){ 
 			//change mixed numbers to improper fractions
-			public static String toImproperFrac(String a,  b, int c) {
+	     
+			public static String toImproperFrac(String a,String b, String c) {
 				return (a * c + b) + "/" + c;
 				return ((whole * denominator) + numerator) "/" denominator;
 	        
