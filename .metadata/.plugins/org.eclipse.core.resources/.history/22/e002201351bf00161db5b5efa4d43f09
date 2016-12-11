@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 
-public class FracCalc3 {
+public class FracCalc {
 	public static void main (String[] args){
 		System.out.println("Insert Your Equation");
 		Scanner input  = new Scanner(System.in);
@@ -92,17 +92,17 @@ Check operator --> call to : AddFrac, SuntracFrac, MultipleFrac, DivideFrac
 
 /*Change mixed number to a improper fraction so that it can be used to calculate*/
 	public static int[] toImproperFrac (int[] operand) {
-		int[] improperFrac=new int [2];
+		int[] improperFraction=new int [2];
 		if(operand[0]<0){   // if the fraction is a negative number
 			
-			improperFrac[0] = (operand[0]*operand[2])+(operand[1]*-1)	;
-			improperFrac[1] = operand[2];
+			improperFraction[0] = (operand[0]*operand[2])+(operand[1]*-1)	;
+			improperFraction[1] = operand[2];
 		}
 			else{
-			improperFrac[0] =((operand[0]*operand[2])+operand[1]);
-			improperFrac[1]=operand[2];
+			improperFraction[0] =((operand[0]*operand[2])+operand[1]);
+			improperFraction[1]=operand[2];
 		}
-		return improperFrac;
+		return improperFraction;
 	}
 // Calls to GCF then checks to see if the numerator can go into the denominator, if the denominator is a negative number or if denominator == -1,0, or 1.
 	
@@ -151,10 +151,6 @@ Check operator --> call to : AddFrac, SuntracFrac, MultipleFrac, DivideFrac
 	}	
 	
 	//A method that finds the greatest common factor of two integers
-	/**
-	 * @param integer
-	 * @return integer
-	 */
 	public static int GCF(int a, int b){
 		while(a!=0 && b!=0){
 			int c = b;
@@ -169,12 +165,12 @@ Then multiply the numerator with each other’s denominator
 Finally Add up the numerator */		
 	public static int[] addFrac(int[] operandOne, int[] operandTwo){ 
 		int[] answer =new int[2];
-		int firstNumerator = operandOne[0];
-		int firstDenominator = operandOne[1];
-		int secondNumerator = operandTwo[0];
-		int secondDenominator = operandTwo[1];
-		answer[0] = secondDenominator * firstNumerator + firstDenominator * secondNumerator;
-		answer[1] = firstDenominator * secondDenominator;
+		int numerator1 = operandOne[0];
+		int denominator1 = operandOne[1];
+		int numerator2 = operandTwo[0];
+		int denominator2 = operandTwo[1];
+		answer[0] = denominator2 * numerator1 + denominator1 * numerator2;
+		answer[1] = denominator1 * denominator2;
 		return answer;
 	}
 	
@@ -184,24 +180,25 @@ Finally subtract one numerator from another one
 */
 	public static int[] subtractFrac(int[] operandOne, int[] operandTwo){ 
 		int[] answer =new int[2];
-		int firstNumerator = operandOne[0];
-		int firstDenominator = operandOne[1];
-		int secondNumerator = operandTwo[0];
-		int secondDenominator = operandTwo[1];
-		answer[0] = secondDenominator * firstNumerator - firstDenominator * secondNumerator;
-		answer[1] = firstDenominator * secondDenominator;
+		int numerator1 = operandOne[0];
+		int denominator1 = operandOne[1];
+		int numerator2 = operandTwo[0];
+		int denominator2 = operandTwo[1];
+		answer[0] = denominator2 * numerator1 - denominator1 * numerator2;
+		answer[1] = denominator1 * denominator2;
 		return answer;
 	}
 	
 	/*Multiply both numerators and denominators*/
+	
 	public static int[] multiplyFrac(int[] operandOne, int[] operandTwo){ 
 		int[] answer =new int[2];
-		int firstNumerator = operandOne[0];
-		int firstDenominator = operandOne[1];
-		int secondNumerator = operandTwo[0];
-		int secondDenominator = operandTwo[1];
-		answer[0] = firstNumerator * secondNumerator;
-		answer[1] = firstDenominator * secondDenominator;
+		int numerator1 = operandOne[0];
+		int denominator1 = operandOne[1];
+		int numerator2 = operandTwo[0];
+		int denominator2 = operandTwo[1];
+		answer[0] = numerator1 * numerator2;
+		answer[1] = denominator1 * denominator2;
 		return answer;
 	}
 	
@@ -209,12 +206,12 @@ Finally subtract one numerator from another one
 Then multiply (I don’t use multiplyFrac)*/
 	public static int[] divideFrac(int[] operandOne, int[] operandTwo){ 
 		int[] answer =new int[2];
-		int firstNumerator = operandOne[0];
-		int firstDenominator = operandOne[1];
-		int secondNumerator = operandTwo[0];
-		int secondDenominator = operandTwo[1];
-		answer[0] =firstNumerator * secondDenominator;
-		answer[1] = firstDenominator * secondNumerator;
+		int numerator1 = operandOne[0];
+		int denominator1 = operandOne[1];
+		int numerator2 = operandTwo[0];
+		int denominator2 = operandTwo[1];
+		answer[0] =numerator1 * denominator2;
+		answer[1] = denominator1 * numerator2;
 		return answer;
 	}
 }

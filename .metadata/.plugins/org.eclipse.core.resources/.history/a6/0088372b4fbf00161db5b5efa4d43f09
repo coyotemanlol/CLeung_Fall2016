@@ -17,14 +17,14 @@ public class FracCalc3 {
 		System.out.println("Insert Your Equation");
 		Scanner input  = new Scanner(System.in);
 		String userInput = input.nextLine();
-		 while (userInput.equals("quit")!= true){
+		while (userInput.equals("Finished!")!= true){
 			String answer = produceAnswer(userInput);
 			System.out.println(answer);
+			System.out.println("Next One: ");
 			userInput = input.nextLine();
 		}
 		System.out.println("Error, Please Start Over");
 	}
-	
 
 /* Note : produceAnswer : Parse/split the operands and the operator by parsing/splitting out the spaces
 parseOperand : seperates each operand into individual characters

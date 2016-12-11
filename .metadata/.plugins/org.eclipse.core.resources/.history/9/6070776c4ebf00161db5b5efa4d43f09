@@ -17,14 +17,14 @@ public class FracCalc3 {
 		System.out.println("Insert Your Equation");
 		Scanner input  = new Scanner(System.in);
 		String userInput = input.nextLine();
-		 while (userInput.equals("quit")!= true){
+		while (userInput.equals("Finished!")!= true){
 			String answer = produceAnswer(userInput);
 			System.out.println(answer);
+			System.out.println("Next One: ");
 			userInput = input.nextLine();
 		}
 		System.out.println("Error, Please Start Over");
 	}
-	
 
 /* Note : produceAnswer : Parse/split the operands and the operator by parsing/splitting out the spaces
 parseOperand : seperates each operand into individual characters
@@ -116,7 +116,7 @@ Check operator --> call to : AddFrac, SuntracFrac, MultipleFrac, DivideFrac
 			answer[1] = answer[1]/GCF;	// Denominator
 		}
 		if(answer[1]<0){
-			answer[1]=Math.abs(answer[1]);
+			answer[1]=Calculate.absValue(answer[1]);
 			answer[0]=answer[0]*-1;
 		}
 		int coefficient = answer[0]/answer[1];
@@ -127,7 +127,7 @@ Check operator --> call to : AddFrac, SuntracFrac, MultipleFrac, DivideFrac
 	 		}else if(remainder==0 && answer[1]==-1){
 	 			reducedAnswer = (Integer.toString(coefficient));
 	  		}else{
-		  		 reducedAnswer = coefficient + "_" + Math.abs(remainder) + "/" + Math.abs(answer[1]);
+		  		 reducedAnswer = coefficient + "_" + Calculate.absValue(remainder) + "/" + Calculate.absValue(answer[1]);
 			}
 		}else if(remainder==0){
 			reducedAnswer = coefficient+"";		
@@ -161,7 +161,7 @@ Check operator --> call to : AddFrac, SuntracFrac, MultipleFrac, DivideFrac
 			b = a%b;
 			a = c;
 		}
-		return Math.abs(a+b);
+		return Calculate.absValue(a+b);
 	}
 	
 		/*Find the common denominator
