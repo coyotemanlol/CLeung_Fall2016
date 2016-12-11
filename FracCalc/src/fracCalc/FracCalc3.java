@@ -1,189 +1,220 @@
-// Cody Leung - AP CS1 - 
-
+/**
+ * Cody Leung
+ * 12/9/16 
+ * APCS Period 1
+ * Project : Fractional Calculator
+ * 
+ * Objective : Create fractional calculator that will take in users inputted equation and output a reduced answer
+ * 
+*/
 package fracCalc;
-import java.util.Arrays; 
+import java.util.Arrays;
 import java.util.Scanner;
 
-	public class FracCalc3 {
-		
-		public static void main(String []args) {
-			Scanner fracReader = new Scanner(System.in);
-			
-			// Reading from System.in 
-			String input = fracReader.nextLine();
-			System.out.println(produceAnswer(input));
-			System.out.println(produceAnswer("5_3/4 + 6_5/8"));   //test
-		}
-		public static String produceAnswer(String input) {
-			if(input.indexOf("+")>=0) {			// equation = addition
-				  String[] split1 = input.split(" ");
-				  String statement1 = split1[0];
-				   String statement2 = split1[1];
-				   String statement3 = split1[2];
-	               statement1 = statement1.trim();
-	               statement2 = statement2.trim();
-	               statement3 = statement3.trim();
-	               String whole = "0";
-	               String denominator = "0";
-	               String numerator = "0";
-	               if((statement3.indexOf("_")>=0)&&(statement3.indexOf("/")>=0)) {		 //when there is a whole number
-	            	    String[] split2 = statement3.split("_");
-	                    whole = split2[0];
-	                    String frac = split2[1];
-	                    String[] split3 = frac.split("/");
-	                    numerator = split3[0];
-	                    denominator = split3[1];
-	               }
-	               else if (statement3.indexOf("/")>=0) {
-	            	   String[] split2 = statement3.split("/");
-	                   whole = "0";
-	                   numerator = split2[0];
-	                   denominator = split2[1];
-	               }
-	               else {
-	                   whole = statement3;
-	                   denominator = "1";
-	               }
-	               //return statement3 + ("(Whole:" + whole +" Numerator:" + numerator +" Denominator:" + denominator + ")");
-	               return "whole:" + whole +" numerator:" + numerator +" denominator:" + denominator;
-	               }
-		     else if (input.indexOf("-")>=0) { 			// equation = subtraction
-		            String[] split1 = input.split(" ");
-		            String statement1 = split1[0];
-		              String statement2 = split1[1];
-		              String statement3 = split1[2];
-		              statement1 = statement1.trim();
-		              statement2 = statement2.trim();
-		              statement3 = statement3.trim();
-		           String whole = "0";
-		           String denominator = "0";
-		           String numerator = "0";
-		              if((statement3.indexOf("_")>=0)&&(statement3.indexOf("/")>=0)) {			//When there is a whole number
-		               String[] split2 = statement3.split("_");
-		               whole = split2[0];
-		               String frac = split2[1];
-		               String[] split3 = frac.split("/");
-		               numerator = split3[0];
-		               denominator = split3[1];
-		              } 
-		              else if (statement3.indexOf("/")>=0) {
-		               String[] split2 = statement3.split("/");
-		               whole = "0";
-		               numerator = split2[0];
-		               denominator = split2[1];
-		              }
-		              else {
-		               whole = statement3;
-		               denominator = "1";
-		              }
-		              					//  returns statement3 + ("(Whole:" + whole +" Numerator:" + num +" Denominator:" + denominator + ")");  
-		              return "whole:" + whole +" numerator:" + numerator +" denominator:" + denominator;
-		               
-		            } 
-		     else if(input.indexOf("/")>=0) { // equation = division
-	                String[] split1 = input.split(" ");
-	              String statement1 = split1[0];
-	              String statement2 = split1[1];
-	              String statement3 = split1[2];
-	              statement1 = statement1.trim();
-	              statement2 = statement2.trim();
-	              statement3 = statement3.trim();
-	           String whole = "0";
-	           String denominator = "0";
-	           String numerator = "0";
-	              if((statement3.indexOf("_")>=0)&&(statement3.indexOf("/")>=0)){		// When there is a whole number present
-	               String[] split2 = statement3.split("_");
-	               whole = split2[0];
-	               String frac = split2[1];
-	               String[] split3 = frac.split("/");
-	               numerator = split3[0];
-	               denominator = split3[1];
-	              } else if (statement3.indexOf("/")>=0){
-	                  String[] split2 = statement3.split("/");
-	                  whole = "0";
-	                  numerator = split2[0];
-	                  denominator = split2[1];
-	                 }
-	                 else{
-	                  whole = statement3;
-	                  denominator = "1";
-	                 }
-	              				//Returns statement3 + ("(Whole:" + whole +" Numerator:" + numerator +" Denominator:" + denominator + ")"); 
-	              return "whole:" + whole +" numerator:" + numerator +" denominator:" + denominator;
-		     } 
-	     		else if(input.indexOf("*")>=0) {			 // equation = multiplication
-	                String[] split1 = input.split(" ");   
-	              String statement1 = split1[0];
-	              String statement2 = split1[1];
-	              String statement3 = split1[2];
-	              statement1 = statement1.trim();
-	              statement2 = statement2.trim();
-	              statement3 = statement3.trim();
-	           String whole = "0";
-	           String denominator = "0";
-	           String numerator = "0";
-	              if((statement3.indexOf("_")>=0)&&(statement3.indexOf("/")>=0)){//when there is a whole number
-	               String[] split2 = statement3.split("_");
-	               whole = split2[0];
-	               String frac = split2[1];
-	               String[] split3 = frac.split("/");
-	               numerator = split3[0];
-	               denominator = split3[1];  
-	              } 
-	              else if (statement3.indexOf("/")>=0) {
-	               String[] split2 = statement3.split("/");
-	               whole = "0";
-	               numerator = split2[0];
-	               denominator = split2[1];
-	              }
-	              else{
-	               whole = statement3;
-	               denominator = "1";
-	              }
-	              					//return statement3 + ("(Whole: " + whole +" Numerator:" + numerator +" Denominator:" + denominator + ")");
-	              return "whole:" + whole +" numerator:" + numerator+" denominator:" + denominator;
-	            }
-	        return "";
-		}
-		// ///////////////////////////////////////////////////////////////////////////
-		// toImproperFrac
-		public static int[] toImproperFrac (int numerator, int denominator, int whole) {
-			int impropFrac;
-			if (whole >0) {
-				impropFrac =((whole * numerator) + denominator) / (denominator);
-			}
-		}
-		// parseOperand	
-		public static int[] parseOperand (String operand){
-			String[] answer;
-			if (operand.indexOf("+") >=0) {
-				answer = operand.split("+");
-			if (operand.indexOf("*") >=0) {
-					answer = operand.split("*");
-				}
-			if (operand.indexOf("-") >=0) {
-					answer = operand.split("-");
-				}
-			if (operand.indexOf("/") >=0) {
-					answer = operand.split("/");
-				}
-			}
-		}
-	     public static int[] produceAnswer (String operators){ 
-			//change mixed numbers to improper fractions
-	     
-			public static String toImproperFrac(String a,String b, String c) {
-				return (a * c + b) + "/" + c;
-				return ((whole * denominator) + numerator) "/" denominator;
-	        
-			
-				
-				
-		// Create a method for each of the functions
-	//	Addition == ((numerator1 * denominator2) + (numerator2 * denominator1) /(denominator1 * denominator2));
-	//	Subtraction == ((numerator1*denominator2 - numerator2*denominator1) / (denominator1*denominator2));
-	//	Multiplication == ((numerator1*numerator2) / (denominator1*denominator2));
-	//	Division == (denominator2 * numerator1) / (denominator1 * numerator2));
-}
 
+public class FracCalc3 {
+	public static void main (String[] args){
+		System.out.println("Insert Your Equation");
+		Scanner input  = new Scanner(System.in);
+		String userInput = input.nextLine();
+		while (userInput.equals("Finished!")!= true){
+			String answer = produceAnswer(userInput);
+			System.out.println(answer);
+			System.out.println("Next One: ");
+			userInput = input.nextLine();
+		}
+		System.out.println("Error, Please Start Over");
+	}
+
+/* Note : produceAnswer : Parse/split the operands and the operator by parsing/splitting out the spaces
+parseOperand : seperates each operand into individual characters
+toImproperFrac : changes the operands into improper fractions so that it can be easier to calculate
+Check operator --> call to : AddFrac, SuntracFrac, MultipleFrac, DivideFrac
+*/
+
+// Note : operandOne stores the operand 1, operandTwo stores the operand 2, improperOperandOne changes operandOne into improp frac, improperOperandTwo changes operandTwo into improp frac.
 	
+	public static String produceAnswer(String Input){
+		String[] splitParse = Input.split(" ");  // split out spaces, so that you will have the operand and operator.
+		String operator= splitParse[1];
+		int[] operandOne= parseOperand(splitParse[0]);
+		int[] operandTwo= parseOperand(splitParse[2]);
+		int[] impropOperandOne=toImproperFrac(operandOne);
+		int[] impropOperandTwo=toImproperFrac(operandTwo);
+		String answer;
+		if ( operator.equals("+") ){
+			answer = toMixedFrac(addFrac(impropOperandOne,impropOperandTwo));
+		}
+			else if(operator.equals("-")){
+				answer = toMixedFrac(subtractFrac(impropOperandOne,impropOperandTwo));
+			}
+				else if(operator.equals("*")){
+					answer = toMixedFrac(multiplyFrac(impropOperandOne,impropOperandTwo));
+				}
+				else if(operator.equals("/")){
+					answer = toMixedFrac(divideFrac(impropOperandOne,impropOperandTwo));	
+				}
+				else{
+					answer = "Please check your expression";
+				}
+				return answer;
+	}
+	
+	// Note : Changes operator into Numerator, Denominator, and whole number.
+	
+	public static int[] parseOperand(String operand){
+		String[] partsOfOperand=new String [3];
+		if (operand.indexOf("_")<0 && operand.indexOf("/")<0) {
+			//integers
+			partsOfOperand[0] = operand;
+			partsOfOperand[1] = "0";
+			partsOfOperand[2] = "1";
+		}
+			else if(operand.indexOf("_")<0 && operand.indexOf("/")>0 ){
+			//improper fraction
+			partsOfOperand[0] = "0";
+			partsOfOperand[1] = operand.substring(0, operand.indexOf("/"));
+			partsOfOperand[2] = operand.substring(operand.indexOf("/")+1);
+		}
+			else if(operand.indexOf("_")>0 && operand.indexOf("/")>0){
+			//Mixed fraction
+			partsOfOperand[0] = operand.substring(0,operand.indexOf("_"));
+			partsOfOperand[1]=operand.substring(operand.indexOf("_")+1,operand.indexOf("/"));
+			partsOfOperand[2] = operand.substring(operand.indexOf("/")+1);
+		}
+			int[] parseOfOperand=new int [3];
+			
+			for(int i = 0; i < 3; i++) {
+				parseOfOperand[i]= Integer.parseInt(partsOfOperand[i]);
+			}
+		return parseOfOperand;
+	}
+
+/*Change mixed number to a improper fraction so that it can be used to calculate*/
+	public static int[] toImproperFrac (int[] operand) {
+		int[] improperFrac=new int [2];
+		if(operand[0]<0){   // if the fraction is a negative number
+			
+			improperFrac[0] = (operand[0]*operand[2])+(operand[1]*-1)	;
+			improperFrac[1] = operand[2];
+		}
+			else{
+			improperFrac[0] =((operand[0]*operand[2])+operand[1]);
+			improperFrac[1]=operand[2];
+		}
+		return improperFrac;
+	}
+// Calls to GCF then checks to see if the numerator can go into the denominator, if the denominator is a negative number or if denominator == -1,0, or 1.
+	
+	 
+	public static String toMixedFrac(int[] answer) {
+		
+		String reducedAnswer;
+		int GCF = GCF(answer[0],answer[1]);
+		if(GCF!=1) {
+			answer[0] = answer[0]/GCF;	// Numerator
+			answer[1] = answer[1]/GCF;	// Denominator
+		}
+		if(answer[1]<0){
+			answer[1]=Calculate.absValue(answer[1]);
+			answer[0]=answer[0]*-1;
+		}
+		int coefficient = answer[0]/answer[1];
+	  	int remainder = answer[0] % answer[1];
+	 	if (coefficient<0){
+	  		if(remainder==0 && answer[1]==1){
+	  			reducedAnswer = (Integer.toString(coefficient));
+	 		}else if(remainder==0 && answer[1]==-1){
+	 			reducedAnswer = (Integer.toString(coefficient));
+	  		}else{
+		  		 reducedAnswer = coefficient + "_" + Calculate.absValue(remainder) + "/" + Calculate.absValue(answer[1]);
+			}
+		}else if(remainder==0){
+			reducedAnswer = coefficient+"";		
+		}else if(coefficient==0){			
+			if(remainder<0 && answer[1]<0){
+				int newNum = remainder*-1;
+		  		int newDenom = answer[1]*-1;
+		  		reducedAnswer = newNum + "/" + newDenom;
+			}else{
+				reducedAnswer = remainder + "/" + answer[1];
+	  		}
+		}else if(remainder<0 && answer[1]<0){
+ 	    	int numerator = remainder*-1;
+ 			int denominator = answer[1]*-1;
+ 			reducedAnswer = coefficient + "_" + numerator + "/" + denominator;
+		}else{
+			reducedAnswer = coefficient + "_" + remainder + "/" + answer[1];
+		}
+					    		
+	   	return reducedAnswer;
+	}	
+	
+	//A method that finds the greatest common factor of two integers
+	/**
+	 * @param integer
+	 * @return integer
+	 */
+	public static int GCF(int a, int b){
+		while(a!=0 && b!=0){
+			int c = b;
+			b = a%b;
+			a = c;
+		}
+		return Calculate.absValue(a+b);
+	}
+	
+		/*Find the common denominator
+Then multiply the numerator with each other’s denominator 
+Finally Add up the numerator */		
+	public static int[] addFrac(int[] operandOne, int[] operandTwo){ 
+		int[] answer =new int[2];
+		int firstNumerator = operandOne[0];
+		int firstDenominator = operandOne[1];
+		int secondNumerator = operandTwo[0];
+		int secondDenominator = operandTwo[1];
+		answer[0] = secondDenominator * firstNumerator + firstDenominator * secondNumerator;
+		answer[1] = firstDenominator * secondDenominator;
+		return answer;
+	}
+	
+	/*Find the common denominator
+Then multiply the numerator with each other’s denominator 
+Finally subtract one numerator from another one
+*/
+	public static int[] subtractFrac(int[] operandOne, int[] operandTwo){ 
+		int[] answer =new int[2];
+		int firstNumerator = operandOne[0];
+		int firstDenominator = operandOne[1];
+		int secondNumerator = operandTwo[0];
+		int secondDenominator = operandTwo[1];
+		answer[0] = secondDenominator * firstNumerator - firstDenominator * secondNumerator;
+		answer[1] = firstDenominator * secondDenominator;
+		return answer;
+	}
+	
+	/*Multiply both numerators and denominators*/
+	public static int[] multiplyFrac(int[] operandOne, int[] operandTwo){ 
+		int[] answer =new int[2];
+		int firstNumerator = operandOne[0];
+		int firstDenominator = operandOne[1];
+		int secondNumerator = operandTwo[0];
+		int secondDenominator = operandTwo[1];
+		answer[0] = firstNumerator * secondNumerator;
+		answer[1] = firstDenominator * secondDenominator;
+		return answer;
+	}
+	
+	/*Reverse the second operand numerator and denominator
+Then multiply (I don’t use multiplyFrac)*/
+	public static int[] divideFrac(int[] operandOne, int[] operandTwo){ 
+		int[] answer =new int[2];
+		int firstNumerator = operandOne[0];
+		int firstDenominator = operandOne[1];
+		int secondNumerator = operandTwo[0];
+		int secondDenominator = operandTwo[1];
+		answer[0] =firstNumerator * secondDenominator;
+		answer[1] = firstDenominator * secondNumerator;
+		return answer;
+	}
+}
