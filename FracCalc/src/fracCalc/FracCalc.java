@@ -20,7 +20,7 @@ public class FracCalc {
 			System.out.println(answer);
 			userInput = input.nextLine();
 		}
-		System.out.println("Error, Please Start Over");
+		System.out.println("GOOD BYE! ^__^ [^.^] {@+@} *\\/* ==v==  0w0 0!0 :D :$ :B ");
 	}
 	
 
