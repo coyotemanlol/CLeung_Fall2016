@@ -1,0 +1,54 @@
+// Cody Leung 2/23/17 Weather Temperature Change
+/** weather.txt
+16.2	23.5
+	19.1 7.4	22.8
+
+18.5	-1.8 14.9
+ */
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+
+public class Weather {
+	public static void main(String[]args){
+		try{
+			tempChange();
+		}catch(FileNotFoundException e){
+			System.out.println("File not found");
+		}
+	}
+	
+	public static void tempChange() throws FileNotFoundException{
+		DecimalFormat df = new DecimalFormat ("#.00");
+			System.out.println("Enter directory:");
+			Scanner directory = new Scanner(System.in); 
+			String filePath = directory.next();
+			directory.close();
+			System.out.println("Fetching File@ " + filePath + " ..."); 
+			System.out.println();
+			Scanner fileReader = new Scanner(new File(filePath)); 
+			double file;
+			ArrayList<Double> readItems = new ArrayList<Double>(); 
+			while(fileReader.hasNext()){
+			file = fileReader.nextDouble();
+			readItems.add(file);
+		}
+		fileReader.close();
+		double temp;
+		ArrayList<Double> differences = new ArrayList<Double>();
+		assert readItems.size() > 1 : "Only 1 Temperature Read, More Needed";
+		for(int i = 0; i < readItems.size() - 1; i++){
+			temp = readItems.get(i) - readItems.get(i+1);
+			if(readItems.get(i+1) > readItems.get(i)){
+				temp = Math.abs(temp);
+			}else if(readItems.get(i) > readItems.get(i+1)){
+				temp = temp*(-1.00);
+			}else{
+				temp = temp;
+			}
+			differences.add(temp); 
+			System.out.println(readItems.get(i) + " to " + readItems.get(i+1) + ", change is " + df.format(differences.get(i)));
+		}
+	}
+}
