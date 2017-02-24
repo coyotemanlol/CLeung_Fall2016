@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="/*" key="selection"/>
+		<item value="decimalFormat" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="DecimalFormat"/>
+			<item value="temp"/>
+			<item value="changeInTemp"/>
 			<item value="/*"/>
 			<item value="//"/>
 			<item value="secondDenominator"/>
 			<item value="secondNumerator"/>
 			<item value="firstDenominator"/>
-			<item value="firstNumerator"/>
-			<item value="improperFrac"/>
-			<item value="gcf"/>
 		</list>
 		<list key="replacehistory">
+			<item value="decimalFormat"/>
+			<item value=""/>
+			<item value="tempChange"/>
 			<item value="denominator2"/>
 			<item value="numerator2"/>
 			<item value="denominator1"/>
 			<item value="numerator1"/>
 			<item value="GCF"/>
-			<item value="impropOperandTwo"/>
-			<item value="impropOperandOne"/>
-			<item value="operandTwo"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
