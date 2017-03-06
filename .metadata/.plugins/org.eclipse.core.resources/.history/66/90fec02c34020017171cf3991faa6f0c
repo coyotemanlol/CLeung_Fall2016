@@ -10,9 +10,8 @@ public class EmptyCell implements Cell {
 		return ""; // Prints out "" in each cell making it blank.
 	}
 	public String fullCellText() {
-		
+		// TODO Auto-generated method stub
 		return ""; // Prints out "" in each cell making it blank.
 	}
 
 }
-	

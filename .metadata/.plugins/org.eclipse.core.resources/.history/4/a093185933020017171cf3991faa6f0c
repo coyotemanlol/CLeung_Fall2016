@@ -10,24 +10,30 @@ public class Spreadsheet implements Grid {
 	public String processCommand(String command) {
 		this.command = command;
 		return this.command;
+	
+		
 	}
 
+	
 	public int getRows() {
-		
+		// TODO Auto-generated method stub
 		return this.row;
 	}
 
+	
 	public int getCols() {
 		
 		return this.col ;
 	}
 
+	
 	public Cell getCell(Location loc)
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Override
 	public String getGridText()
 	{
 		// TODO Auto-generated method stub
