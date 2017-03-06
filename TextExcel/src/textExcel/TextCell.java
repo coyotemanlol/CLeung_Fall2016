@@ -2,9 +2,10 @@ package textExcel;
 // TextCell implements Cell interface
 public class TextCell implements Cell {
 
-	@Override
+	public TextCell(){
+	}
 	public String abbreviatedCellText() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

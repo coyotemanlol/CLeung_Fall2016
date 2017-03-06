@@ -3,8 +3,8 @@ package textExcel;
 //Update this file with your own code.
 
 public class SpreadsheetLocation implements Location {
-	private int col;
 	private int row;
+	private int col; 
 	private String location;
 	   
     public int getRow() { // Method returns the row of the specified location.
@@ -18,7 +18,7 @@ public class SpreadsheetLocation implements Location {
     }
     
     public SpreadsheetLocation(String cellName) {
-     location=cellnName;
+     location = cellName;
     }
 
 }

@@ -1,8 +1,8 @@
 package textExcel;
 // EmptyCell implements Cell interface
 public class EmptyCell implements Cell {
-	public EmptyCell() { 
-		
+	
+	public EmptyCell() { 	
 	}
 	
 	public String abbreviatedCellText() {
