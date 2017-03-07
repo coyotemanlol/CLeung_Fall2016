@@ -9,7 +9,6 @@ public class TextCell implements Cell {
 		return null;
 	}
 
-	@Override
 	public String fullCellText() {
 		// TODO Auto-generated method stub
 		return null;

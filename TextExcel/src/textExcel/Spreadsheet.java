@@ -6,7 +6,7 @@ package textExcel;
  * 2
  * 3
  * 4
- *  Rows = 1,2,3,4
+ *  Rows = 1,2,3,4/
  *  Columns = A,B,C,D
  */
 public class Spreadsheet implements Grid {
@@ -25,17 +25,20 @@ public class Spreadsheet implements Grid {
 
 	public int getCols() {
 		return this.col ;
-	}
+	} 
 	
 	//  ^^^ ONLY NEEDED FOR CP 1 ^^^
-	public Cell getCell(Location loc)
-	{
-		// TODO Auto-generated method stub
+	public Cell getCell(Location loc){
+		// TODO Auto-m, method stub
 		return null;
 	}
-	public String getGridText()
-	{
-		// TODO Auto-generated method stub
+	public String getGridText() {
+// Cells[][] spreadsheet = new EmptyCells[rows][cols];
+		
+		String[] topRow = {"A","B","C","D","E","F","G","H","I","J","K","L"};
+		for (int i = 1; i < 13; i++){
+			System.out.println("|" + topRow[i] + "         ");
+		}
 		return null;
 	}
 
