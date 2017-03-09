@@ -7,7 +7,7 @@ public class EmptyCell implements Cell {
 	
 	public String abbreviatedCellText() {
 		
-		return ""; // Prints out "" in each cell making it blank.
+		return "          "; // Prints out "" in each cell making it blank.
 	}
 	public String fullCellText() {
 		
