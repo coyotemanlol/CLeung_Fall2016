@@ -29,22 +29,20 @@ public class Spreadsheet implements Grid {
 	
 	//  ^^^ ONLY NEEDED FOR CP 1 ^^^
 	public Cell getCell(Location loc){
-		// TODO Auto-m, method stub
-		return null;
+		
+		return loc;
 	}
 	public String getGridText() {
-	}
-// Cells[][] spreadsheet = new EmptyCells[rows][cols];
+		Cell[][] spreadsheet = new EmptyCell[row][col];
 		
 		
-		
-//		String[] topRow = {"A","B","C","D","E","F","G","H","I","J","K","L"};
-/* 		for (int i = 1; i < 13; i++){
+			String[] topRow = {"A","B","C","D","E","F","G","H","I","J","K","L"};
+ 		for (int i = 1; i < 13; i++){
 			System.out.println("|" + topRow[i] + "         ");
 		}
 		return null;
 	}
 
 }
-*/
-}
+
+
