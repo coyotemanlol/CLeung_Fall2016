@@ -28,6 +28,7 @@ public class Spreadsheet implements Grid {
 	} 
 	
 	//  ^^^ ONLY NEEDED FOR CP 1 ^^^
+	// vvv CHECK POINT 2 vvv
 	public Cell getCell(Location loc){
 		
 		return loc;
