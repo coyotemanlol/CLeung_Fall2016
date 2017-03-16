@@ -10,40 +10,111 @@ package textExcel;
  *  Columns = A,B,C,D
  */
 public class Spreadsheet implements Grid {
-	private int row = 20; 
-	private int col = 12; 
 	private String command;
-	 
+	private Cell[][] grid = new EmptyCell [20] [12];;
+	
+	public Spreadsheet(){
+
+		for (int i = 0; i < 20; i++){
+			for (int j = 0; j< 12; j++){
+				grid [i][j] = new EmptyCell();
+			}
+		}
+	}
+	
 	public String processCommand(String command) {
-		this.command = command;
-		return this.command;
+		Location loc;
+		String[] Command = command.split(" ");
+		
+		if(Command.length == 2&&Command[0].toLowerCase().equals("clear")){  		//clearing a particular cell (e.g., clear A1).
+			clearCell(Command[1]);
+			return getGridText();
+			
+		}else if(Command.length == 3){						//assignment to string values (e.g., A1 = "Hello").
+			assignValue(Command);
+			return getGridText();
+			
+		}else{
+			if(Command.length==1&&Command[0].toLowerCase().equals("clear")){  //clearing the entire sheet (e.g., clear).
+				clear();
+				return getGridText();
+				
+			}else{     			//cell inspection (e.g., A1). This should return the value at that cell
+				return inspectCell(Command[0]);
+				
+			}
+		}	
 	}
 
+
 	public int getRows() {
-		return this.row;
+		return 20;
 	}
 
 	public int getCols() {
-		return this.col ;
+		return 12;
 	} 
 	
 	//  ^^^ ONLY NEEDED FOR CP 1 ^^^
 	// vvv CHECK POINT 2 vvv
-	public Cell getCell(Location loc){
+	
+	public Cell getCell(Location loc)
+	{
 		
-		return loc;
+		int row = loc.getRow();
+		int column = loc.getCol();
+		return grid[row][column];	
 	}
-	public String getGridText() {
-		Cell[][] spreadsheet = new EmptyCell[row][col];
-		
-		
-			String[] topRow = {"A","B","C","D","E","F","G","H","I","J","K","L"};
- 		for (int i = 1; i < 13; i++){
-			System.out.println("|" + topRow[i] + "         ");
+	
+	
+	public String getGridText()
+	{
+		 
+		String topLetter = "   |";
+		for(char i = 'A'; i<='L'; i++){
+			topLetter += i + "         |";
 		}
-		return null;
+		String numbers = "\n";
+		for(int i = 0;i < 20;i++){
+			if(i<9){
+				numbers += (i+1);
+				numbers += "  |";
+				for(int j = 0; j<12;j++){
+					numbers += grid[i][j].abbreviatedCellText() + "|";
+				}
+				numbers +="\n";
+			}else{
+				numbers += (i+1);
+				numbers += " |";
+				for(int j = 0; j<12;j++){
+					numbers += grid[i][j].abbreviatedCellText() + "|";
+				}
+				numbers +="\n";
+			}
+		}
+		return topLetter + numbers;
 	}
 
+	public void clear(){
+		for(int i = 0; i<20;i++){
+			for(int j = 0;j<12;j++){
+				grid [i][j] = new EmptyCell();
+			}
+		}
+	}
+	
+	public void clearCell(String cell){
+		SpreadsheetLocation loc = new SpreadsheetLocation(cell.toUpperCase());  
+		grid[loc.getRow()][loc.getCol()] = new EmptyCell();
+	}
+	
+	public void assignValue(String[] cell){
+		SpreadsheetLocation loc = new SpreadsheetLocation(cell[0].toUpperCase());
+		grid[loc.getRow()][loc.getCol()] = new TextCell(cell[2]);
+	}
+	
+	public String inspectCell(String cell){
+		SpreadsheetLocation loc = new SpreadsheetLocation(cell.toUpperCase()); 
+		return getCell(loc).fullCellText();
+	}
 }
-
-

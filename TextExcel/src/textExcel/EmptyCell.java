@@ -11,7 +11,7 @@ public class EmptyCell implements Cell {
 	}
 	public String fullCellText() {
 		
-		return ""; // Prints out "" in each cell making it blank.
+		return "\"\""; // Prints out "" in each cell making it blank.
 	}
 
 }

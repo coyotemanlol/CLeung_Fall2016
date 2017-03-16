@@ -3,16 +3,30 @@ package textExcel;
 //Check Point 2
 public class TextCell implements Cell {
 
-	public TextCell(){
-	}
-	public String abbreviatedCellText() {
-		
-		return null;
+	private String content;
+	
+	public TextCell(String s) {
+		content = s.substring(1,s.length()-1);
 	}
 
+	public String abbreviatedCellText() {
+		int strlength = content.length();
+		String abbreviated;
+		if(strlength < 10){
+			abbreviated = content.substring(0);
+			for(int i = 0; i < 10-strlength;i++){
+				abbreviated += " ";
+			}
+		}else{
+			abbreviated = content.substring(0, 10);
+		}
+		return abbreviated;
+	}
+
+	
 	public String fullCellText() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return "\""+ content + "\"";
 	}
 
 }
