@@ -6,27 +6,34 @@ public class TextCell implements Cell {
 	private String content;
 	
 	public TextCell(String s) {
-		content = s.substring(1,s.length()-1);
+		this.content = s;
 	}
-
+	public void setTextCell(String str){
+		content = str;
+	}
 	public String abbreviatedCellText() {
-		int strlength = content.length();
-		String abbreviated;
-		if(strlength < 10){
-			abbreviated = content.substring(0);
-			for(int i = 0; i < 10-strlength;i++){
-				abbreviated += " ";
-			}
-		}else{
-			abbreviated = content.substring(0, 10);
+		String abbreviatedText = content;
+		
+		if(content.charAt(0) == '\"'){
+			abbreviatedText = content.substring(1, content.length() - 1);
 		}
-		return abbreviated;
+		if(abbreviatedText.length() > 10){
+			abbreviatedText = content.substring(1, 11);
+			return abbreviatedText;
+		}else{
+			//fills in the spaces
+			while(abbreviatedText.length()<10){
+				abbreviatedText += " ";
+
+			}
+			return abbreviatedText;
+		}
 	}
 
 	
 	public String fullCellText() {
+		return content;
 		
-		return "\""+ content + "\"";
 	}
 
 }

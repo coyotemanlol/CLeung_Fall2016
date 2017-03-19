@@ -1,18 +1,20 @@
 package textExcel;
-// EmptyCell implements Cell interface
+// EmptyCell extends TextCell
 public class EmptyCell implements Cell {
-	
-	public EmptyCell() { 	
+
+	public EmptyCell(){
+		
 	}
 	
 	public String abbreviatedCellText() {
 		
-		return "          "; // Prints out "" in each cell making it blank.
+		return "          ";
 	}
+
+	
 	public String fullCellText() {
 		
-		return ""; // Prints out "" in each cell making it blank.
+		return "";
 	}
 
 }
-	

@@ -61,7 +61,8 @@ public class Spreadsheet implements Grid {
 	}
 
 	
-	public String getGridText() {
+	public String getGridText()
+	{
 		 
 		String topLetter = "   |";
 		for(char i = 'A'; i<='L'; i++){
@@ -89,7 +90,7 @@ public class Spreadsheet implements Grid {
 	}
 
 	public void clear(){
-								//clears the entire grid space
+		//clear the entire grid
 		for(int i = 0; i<20;i++){
 			for(int j = 0;j<12;j++){
 				grid [i][j] = new EmptyCell();

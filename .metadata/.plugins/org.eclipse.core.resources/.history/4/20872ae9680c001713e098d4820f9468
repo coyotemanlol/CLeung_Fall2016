@@ -10,8 +10,11 @@ package textExcel;
  *  Columns = A,B,C,D
  */
 public class Spreadsheet implements Grid {
-	private Cell[][] grid = new Cell [20] [12];
+	private String command;
+	private Cell[][] grid = new EmptyCell [20] [12];;
+	
 	public Spreadsheet(){
+
 		for (int i = 0; i < 20; i++){
 			for (int j = 0; j< 12; j++){
 				grid [i][j] = new EmptyCell();
@@ -20,17 +23,18 @@ public class Spreadsheet implements Grid {
 	}
 	
 	public String processCommand(String command) {
-		String[] Command = command.split(" ",3);
+		Location loc;
+		String[] Command = command.split(" ");
 		
 		if(Command.length == 2&&Command[0].toLowerCase().equals("clear")){  		//clearing a particular cell (e.g., clear A1).
 			clearCell(Command[1]);
 			return getGridText();
 			
-		}else if(Command.length == 3) {						//assignment to string values (e.g., A1 = "Hello").
-			assignValue(Command[0],Command[2]);
+		}else if(Command.length == 3){						//assignment to string values (e.g., A1 = "Hello").
+			assignValue(Command);
 			return getGridText();
 			
-		}else {
+		}else{
 			if(Command.length==1&&Command[0].toLowerCase().equals("clear")){  //clearing the entire sheet (e.g., clear).
 				clear();
 				return getGridText();
@@ -41,27 +45,30 @@ public class Spreadsheet implements Grid {
 			}
 		}	
 	}
-	
+
+
 	public int getRows() {
-		
 		return 20;
 	}
 
-	
 	public int getCols() {
-		
 		return 12;
-	}
-
-
-	public Cell getCell(Location loc) {
-
-		return grid[loc.getRow()][loc.getCol()];
-
-	}
-
+	} 
 	
-	public String getGridText() {
+	//  ^^^ ONLY NEEDED FOR CP 1 ^^^
+	// vvv CHECK POINT 2 vvv
+	
+	public Cell getCell(Location loc)
+	{
+		
+		int row = loc.getRow();
+		int column = loc.getCol();
+		return grid[row][column];	
+	}
+	
+	
+	public String getGridText()
+	{
 		 
 		String topLetter = "   |";
 		for(char i = 'A'; i<='L'; i++){
@@ -89,7 +96,6 @@ public class Spreadsheet implements Grid {
 	}
 
 	public void clear(){
-								//clears the entire grid space
 		for(int i = 0; i<20;i++){
 			for(int j = 0;j<12;j++){
 				grid [i][j] = new EmptyCell();
@@ -98,19 +104,16 @@ public class Spreadsheet implements Grid {
 	}
 	
 	public void clearCell(String cell){
-		//Clear the value within the assigned cell
 		SpreadsheetLocation loc = new SpreadsheetLocation(cell.toUpperCase());  
 		grid[loc.getRow()][loc.getCol()] = new EmptyCell();
 	}
 	
-	public void assignValue(String cell, String input){
-		//Assign the value to the given
-		SpreadsheetLocation loc = new SpreadsheetLocation(cell.toUpperCase());
-		grid[loc.getRow()][loc.getCol()] = new TextCell(input.trim());
+	public void assignValue(String[] cell){
+		SpreadsheetLocation loc = new SpreadsheetLocation(cell[0].toUpperCase());
+		grid[loc.getRow()][loc.getCol()] = new TextCell(cell[2]);
 	}
 	
 	public String inspectCell(String cell){
-		//Inspect the content of the cell
 		SpreadsheetLocation loc = new SpreadsheetLocation(cell.toUpperCase()); 
 		return getCell(loc).fullCellText();
 	}
