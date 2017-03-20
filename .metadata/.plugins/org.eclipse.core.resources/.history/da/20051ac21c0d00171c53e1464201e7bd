@@ -19,31 +19,9 @@ public class Spreadsheet implements Grid {
 		}
 	}
 	
-	public String processCommand(String command) {
-		command = command.trim();
-		if (command.equals("")) {
-			return "";
-		}
-		String[] Command = command.split(" ",3);
-		
-		if(Command.length == 2&&Command[0].toLowerCase().equals("clear")){  		//clearing a particular cell (e.g., clear A1).
-			clearCell(Command[1]);
-			return getGridText();
-			
-		}else if(Command.length == 3) {						//assignment to string values (e.g., A1 = "Hello").
-			assignValue(Command[0],Command[2]);
-			return getGridText();
-			
-		}else {
-			if(Command.length==1&&Command[0].toLowerCase().equals("clear")){  //clearing the entire sheet (e.g., clear).
-				clear();
-				return getGridText();
-				
-			}else{     			//cell inspection (e.g., A1). This should return the value at that cell
-				return inspectCell(Command[0]);
-				
-			}
-		}	
+	command = command.trim();
+	if (command.equals("")) {
+		return "";
 	}
 	
 	public int getRows() {

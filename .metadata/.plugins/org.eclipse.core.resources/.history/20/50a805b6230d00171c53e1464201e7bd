@@ -1,5 +1,5 @@
 package textExcel;
-// RealCell extends Cell
+
 public class RealCell implements Cell {
 
 	private String UserInput;

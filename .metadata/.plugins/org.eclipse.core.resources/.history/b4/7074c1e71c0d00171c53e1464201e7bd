@@ -20,10 +20,6 @@ public class Spreadsheet implements Grid {
 	}
 	
 	public String processCommand(String command) {
-		command = command.trim();
-		if (command.equals("")) {
-			return "";
-		}
 		String[] Command = command.split(" ",3);
 		
 		if(Command.length == 2&&Command[0].toLowerCase().equals("clear")){  		//clearing a particular cell (e.g., clear A1).

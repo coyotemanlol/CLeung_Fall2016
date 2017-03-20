@@ -10,16 +10,16 @@ public class SpreadsheetLocation implements Location
 
     public int getRow()
     {
-    								
-    	row =  Integer.parseInt(location.substring(1)); // gets row at the location
+    								// gets row at the location
+    	row =  Integer.parseInt(location.substring(1));
         return row-1;
     }
 
 
     public int getCol()
     {
-    										
-    	this.col = location.charAt(0);  // gets column at the location
+    										// gets column at the location
+    	this.col = location.charAt(0);
         return col-65;
     }
     
