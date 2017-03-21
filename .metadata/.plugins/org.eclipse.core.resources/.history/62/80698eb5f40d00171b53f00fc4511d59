@@ -8,6 +8,7 @@ private String input;
 		super (input);
 		this.input = input;
 	}
+	
 
 	public String abbreviatedCellText() {
 
