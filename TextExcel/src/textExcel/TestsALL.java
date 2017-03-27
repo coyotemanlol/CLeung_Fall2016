@@ -534,7 +534,7 @@ public class TestsALL
             assertEquals("real moderate cell length", 10, moderateCell.abbreviatedCellText().length());
             assertEquals("real moderate cell", moderate + ".0", moderateCell.abbreviatedCellText().trim());
             assertEquals("real moderate inspection", moderate, moderateCell.fullCellText());
-
+            
             String precisePerc = "7.87878%";
             grid.processCommand("A4 = " + precisePerc);
             Cell precisePerCell = grid.getCell(new TestLocation(3, 0));
