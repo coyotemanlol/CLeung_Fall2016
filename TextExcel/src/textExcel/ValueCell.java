@@ -8,23 +8,20 @@ public class ValueCell extends RealCell implements Cell{
 	}
 	
 	public String abbreviatedCellText(){
-		String abrv;
+		String abrv ;
 		if(input.length()>10){
 			abrv = input.substring(0,10);
 		}else{
-			return Double.parseDouble(this.input.substring(0, this.input.substring()-1));
+			abrv = getDoubleValue() + "";
 		}
+		return abrv;
 	}
 	
 	public String FullCellText() {
-		return getDoubleValue;
+		return input;
 	}
 	public double getDoubleValue() {
-		if(this.input.length()> 10){
-		return Double.parseDouble(this.input.substring(0, this.input.indexOf(10)));
-	}else{
-		return this.input;
-	}
+		return Double.parseDouble(input);
 
 
 	}

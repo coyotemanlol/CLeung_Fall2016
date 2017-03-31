@@ -103,16 +103,27 @@ public class Spreadsheet implements Grid {
 	
 	public void clearCell(String cell){
 		//Clear the value within the assigned cell
-		SpreadsheetLocation loc = new SpreadsheetLocation(cell.toUpperCase());  
+		SpreadsheetLocation loc = new SpreadsheetLocation(cell.toUpperCase()); 
+		
 		grid[loc.getRow()][loc.getCol()] = new EmptyCell();
 	}
 	
 	public void assignValue(String cell, String input){
 		//Assign the value to the given
 		SpreadsheetLocation loc = new SpreadsheetLocation(cell.toUpperCase());
+		
 		grid[loc.getRow()][loc.getCol()] = new TextCell(input.trim());
+		
+		if(input.trim().charAt(0) == 34) {
+		grid[loc.getRow()][loc.getCol()] = new TextCell();
+		
+		}else if()
+		grid[loc.getRow()][loc.getCol()] = new PercentCell();
+		grid[loc.getRow()]loc.getCol()] = new ValueCell();
+		}
+		
 	}
-	
+		
 	public String inspectCell(String cell){
 		//Inspect the content of the cell
 		SpreadsheetLocation loc = new SpreadsheetLocation(cell.toUpperCase()); 
