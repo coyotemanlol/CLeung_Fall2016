@@ -2,37 +2,33 @@ package textExcel;
 
 public class TextCell implements Cell {
 
-	private String content;
+	private String cellContents;
 	
-	public TextCell(String s) {
-		this.content = s;
-	}
-	public void setTextCell(String str){
-		content = str;
+	public TextCell(String contents) {
+		cellContents = contents;
 	}
 	public String abbreviatedCellText() {
-		String abbreviatedText = content;
-		
-		if(content.charAt(0) == '\"'){
-			abbreviatedText = content.substring(1, content.length() - 1);
+		String newCellContents = cellContents;
+		if(cellContents.length() > 10) {
+			return(cellContents.substring(0, 10));
 		}
-		if(abbreviatedText.length() > 10){
-			abbreviatedText = content.substring(1, 11);
-			return abbreviatedText;
-		}else{
-			//fills in the spaces
-			while(abbreviatedText.length()<10){
-				abbreviatedText += " ";
-
+		else {
+			for(int i = 0; i < 10 - cellContents.length(); i++) {
+				newCellContents += " ";
 			}
-			return abbreviatedText;
+			return newCellContents;
 		}
+	
 	}
 
 	
 	public String fullCellText() {
-		return content;
-		
+		String newCellContents = "\"" + cellContents + "\"";
+		return newCellContents;
+	}
+	
+	public void setContents(String newContents){
+		cellContents = newContents;
 	}
 
 }

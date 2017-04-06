@@ -1,42 +1,53 @@
 package textExcel;
 
-public class FormulaCell extends RealCell implements Cell{
+import java.util.Arrays;
 
-private String input;
+public class FormulaCell extends RealCell {
 	
-	public FormulaCell (String input){
-		super (input);
-		this.input = input;
+	//Constructs a new formula cell
+	public FormulaCell(String userInput) {
+		super(userInput);
 	}
 	
-
+	//Returns the value of the evaluated formula truncated to ten spaces
 	public String abbreviatedCellText() {
-
-		String abrv = GetDoubleValue() + "";
-		abrv += "          ";
-		return abrv.substring(0,10);
-	}
-
-	public String fullCellText() {
-		return input;
+		String cellContents = "" + this.getDoubleValue();
+		String returnString = cellContents;
+		if(cellContents.length() > 10) {
+			return(cellContents.substring(0, 10));
+		}
+		else {
+			for(int i = 0; i < 10 - cellContents.length(); i++) {
+				returnString += " ";
+			}
+			return returnString;
+		}
 	}
 	
-	public double GetDoubleValue (){
-		String formula = input.substring(1,input.length()-1);//get rid of the parenthesis
-		String[] num = formula.split(" ");
-		double start = Double.parseDouble(num[1]);
-		
-		for(int i = 4; i < num.length; i+=2){
-			if(num[i-2].equals("+")){
-				start += Double.parseDouble(num[i-1]);
-			} else if(num[i-2].equals("*")){
-				start *= Double.parseDouble(num[i-1]);
-			} else if(num[i-2].equals("/")){
-				start /= Double.parseDouble(num[i-1]);
-			} else{
-				start -= Double.parseDouble(num[i-1]);
+	//Evaluates the formula of a formula cell
+	public double getDoubleValue() {
+		String [] arr = getUserInput().substring(2, getUserInput().length()-2).split(" ");
+		double value = Double.valueOf(arr[0]);	
+		for(int i = 0; i < arr.length - 1; i += 2) {
+			if(arr[i+1].equals("+")) {
+				value += Double.valueOf(arr[i+2]);
+			}
+			else {
+				if(arr[i+1].equals("-")) {
+					value -= Double.valueOf(arr[i+2]);
+				}
+				else {
+					if(arr[i+1].equals("*")) {
+						value *= Double.valueOf(arr[i+2]);
+					}
+					else {
+						if(arr[i+1].equals("/")) {
+							value /= Double.valueOf(arr[i+2]);
+						}
+					}
+				}
 			}
 		}
-		return start;
+		return value;
 	}
 }
