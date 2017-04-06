@@ -1,6 +1,5 @@
 package textExcel;
-// TextCell implements Cell interface
-//Check Point 2
+
 public class TextCell implements Cell {
 
 	private String content;

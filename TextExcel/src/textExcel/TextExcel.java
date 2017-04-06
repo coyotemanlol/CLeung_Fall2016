@@ -3,6 +3,8 @@ import java.util.*;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import textExcel.TestsALL.TestLocation;
+
 
 
 public class TextExcel
@@ -10,10 +12,14 @@ public class TextExcel
 
 	public static void main(String[] args)
 	{
-		String greeting = "Hello, world!";
-      
+		String greeting = "98828938298392839";
+		System.out.println(Double.parseDouble(greeting) + "");
+		
+		
 		Grid test = new Spreadsheet();
-		String a = test.processCommand("a3 = \"" + greeting + "\"");
+		String a = test.processCommand("a2 = " + greeting);
+		Cell bigCell = test.getCell(new TestLocation(0, 0));
+
 		System.out.println(a);
 
 		//TestsALL.Helper th = new TestsALL.Helper();

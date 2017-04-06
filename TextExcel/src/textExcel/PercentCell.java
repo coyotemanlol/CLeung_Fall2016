@@ -3,30 +3,30 @@ package textExcel;
 public class PercentCell extends RealCell implements Cell{
 
 	private String input;
-	public PercentCell (String test) {
-		super (test);
-		this.input = test;
+	public PercentCell (String input){
+		super (input);
+		this.input = input;
 	}
 	
-	public String abbreviatedCellText() { // returns the percents needed for the table grid
-		String roundfrac;
-		if (this.input.indexOf(".")<0) {
-			roundfrac = this.input;
-		}else {
-			roundfrac = this.input.substring(0, this.input.indexOf("."));
+	public String abbreviatedCellText() {
+		String abrv;
+		if(input.indexOf(".") == -1){
+			abrv = input;
+		}else{
+			abrv = input.substring(0, input.indexOf("."));
 		}
-		roundfrac += "          %";
+		abrv += "%          ";
 		
-		return roundfrac;
+		return abrv.substring(0,10);
 	}
 
-	public String fullCellText() { // gets the value used for the inspect file
+	public String fullCellText() {
 
-		return getDoubleValue()+"";
+		return GetDoubleValue()+"";
 	}
 	
-	public double getDoubleValue (){	 //truncate
-		return Double.parseDouble(this.input.substring(0, this.input.length()-1))/100;
+	public double GetDoubleValue (){
+		return Double.parseDouble(input.substring(0, input.length()-1))/100;
 		
 	}
 

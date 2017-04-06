@@ -1,6 +1,6 @@
 package textExcel;
 
-//Update this file with your own code.
+
 
 public class SpreadsheetLocation implements Location
 {
@@ -10,16 +10,16 @@ public class SpreadsheetLocation implements Location
 
     public int getRow()
     {
-    								
-    	row =  Integer.parseInt(location.substring(1)); // gets row at the location
+    	// gets row of this location
+    	row =  Integer.parseInt(location.substring(1));
         return row-1;
     }
 
 
     public int getCol()
     {
-    										
-    	this.col = location.charAt(0);  // gets column at the location
+    	// gets column of this location
+    	this.col = location.charAt(0);
         return col-65;
     }
     

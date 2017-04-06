@@ -8,10 +8,11 @@ private String input;
 		super (input);
 		this.input = input;
 	}
+	
 
 	public String abbreviatedCellText() {
 
-		String abrv = this.input;
+		String abrv = GetDoubleValue() + "";
 		abrv += "          ";
 		return abrv.substring(0,10);
 	}
@@ -21,6 +22,21 @@ private String input;
 	}
 	
 	public double GetDoubleValue (){
-		return Double.parseDouble(input);
+		String formula = input.substring(1,input.length()-1);//get rid of the parenthesis
+		String[] num = formula.split(" ");
+		double start = Double.parseDouble(num[1]);
+		
+		for(int i = 4; i < num.length; i+=2){
+			if(num[i-2].equals("+")){
+				start += Double.parseDouble(num[i-1]);
+			} else if(num[i-2].equals("*")){
+				start *= Double.parseDouble(num[i-1]);
+			} else if(num[i-2].equals("/")){
+				start /= Double.parseDouble(num[i-1]);
+			} else{
+				start -= Double.parseDouble(num[i-1]);
+			}
+		}
+		return start;
 	}
 }
