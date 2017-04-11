@@ -30,13 +30,13 @@ public class Spreadsheet implements Grid {
 			returnString = "quit";
 		}
 		else {
-			
-			if(command.equals("")) { // if command is blank, return nothing
+			//Returns nothing if the command is blank
+			if(command.equals("")) {
 				returnString = "";
 			}
 			else {
-			
-				if (command.length() <= 3 && command.length() != 0) { // returns un-truncated text in the cell
+				//Returns the non-truncated contents of a specified cell
+				if (command.length() <= 3 && command.length() != 0) {
 					column = Character.getNumericValue(command.charAt(0)) - 9;
 					row = Integer.valueOf((command.substring(1))) ;
 					

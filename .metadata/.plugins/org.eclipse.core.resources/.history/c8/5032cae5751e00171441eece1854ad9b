@@ -10,8 +10,7 @@ public class RealCell implements Cell {
 	}
 	
 	//Returns the contents of the cell truncated to ten spaces
-	// Cody Leung 4-8-17 TextExcel 
-public String abbreviatedCellText() {
+	public String abbreviatedCellText() {
 		String newCellContents = userInput;
 		if(userInput.length() > 10) {
 			return(userInput.substring(0, 10));

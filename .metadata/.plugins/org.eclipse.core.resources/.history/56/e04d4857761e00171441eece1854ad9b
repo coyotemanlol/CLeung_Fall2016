@@ -13,8 +13,8 @@ public class Spreadsheet implements Grid {
 	private int numberOfColumns = 12;
 	Cell [][] spreadsheet = new Cell [21][13];
 	
-	
-	public Spreadsheet() { //creates new spreadsheet
+	//Constructs a new spreadsheet
+	public Spreadsheet() {
 		for(int i = 1; i < 21; i++) {
 			for(int j = 1; j < 13; j++) {
 				spreadsheet [i][j] = new EmptyCell();
@@ -25,18 +25,18 @@ public class Spreadsheet implements Grid {
 	public String processCommand(String command) {
 		int row, column;
 		String returnString = "";
-		
-		if (command.equals("quit")) { // exits program 
+		//Quits the program
+		if (command.equals("quit")) {
 			returnString = "quit";
 		}
 		else {
-			
-			if(command.equals("")) { // if command is blank, return nothing
+			//Returns nothing if the command is blank
+			if(command.equals("")) {
 				returnString = "";
 			}
 			else {
-			
-				if (command.length() <= 3 && command.length() != 0) { // returns un-truncated text in the cell
+				//Returns the non-truncated contents of a specified cell
+				if (command.length() <= 3 && command.length() != 0) {
 					column = Character.getNumericValue(command.charAt(0)) - 9;
 					row = Integer.valueOf((command.substring(1))) ;
 					
@@ -90,37 +90,58 @@ public class Spreadsheet implements Grid {
 							}
 						}
 						returnString = this.getGridText();
-					}
-					if(command.toLowerCase().equals("clear")) {
-						Cell [][] clearedSpreadsheet = new Cell[21][13];
-						for(int i = 1; i < 21; i++) {
-						for(int j = 1; j < 13; j++) {
-							clearedSpreadsheet [i][j] = new EmptyCell();
-						}
-						}
-						spreadsheet = clearedSpreadsheet;
-						returnString = this.getGridText();
-					}
-					if(command.toLowerCase().contains("clear ")) {
-						String [] splitInput2 = command.split(" ", 2);
-			
-						SpreadsheetLocation location = new SpreadsheetLocation(splitInput2[1]);
-						spreadsheet[location.getRow() + 1][location.getCol() + 1] = new EmptyCell();
-						returnString = this.getGridText();	
-					}
-					if(command.substring(0,4).equals("save")){
-						returnString = this.writeToFile(command.substring(5));
-					}
-					if(command.substring(0,4).equals("open")){
-						returnString = this.readFromFile(command.substring(5));
-					}
-				}	
-			}
+					}}
+		private String writeToFile(String filename){  //Saves spreadsheet into a file
+		
+		PrintStream outputFile;
+
+		try {
+		outputFile = new PrintStream(new File(filename));
 		}
+
+		catch (FileNotFoundException e) {
+			return "File not found: " + filename;
+		}
+
+		String line;
+			char cellColumn = 'A';
+			String cellName;
+			String cellType;
+			for (int col = 1; col < 13; col++) {
+				for (int row = 1; row < 21; row++) {
+					cellName = "" + cellColumn + row;
+					if(!spreadsheet[row][col].fullCellText().equals("")) {
+						if(spreadsheet[row][col].abbreviatedCellText().contains("%")) {
+							cellType = "PercentCell";
+						}
+						else {
+							if(spreadsheet[row][col].fullCellText().contains("\"")) {
+								cellType = "TextCell";
+							}
+							else {
+								if(isNumeric(spreadsheet[row][col].fullCellText())) {
+									cellType = "ValueCell";
+								}
+								else {
+								
+								cellType = "FormulaCell";
+								}
+							}
+						}
+						line = cellName + "," + cellType + "," + spreadsheet[row][col].fullCellText();
+						outputFile.println(line);
+					}
+				}
+				cellColumn++;
+			}
 		
-		return returnString;
-	}
-		
+			outputFile.close();
+
+			return this.getGridText();
+
+			}
+
+	
 	private String readFromFile(String filename){ // takes a input file and makes a spreadsheet
 
 		Scanner inputFile;
@@ -248,56 +269,5 @@ public class Spreadsheet implements Grid {
 		grid += "\n";
 	}
 	return grid;
-	}private String writeToFile(String filename){  //Saves spreadsheet into a file
-		
-		PrintStream outputFile;
-
-		try {
-		outputFile = new PrintStream(new File(filename));
-		}
-
-		catch (FileNotFoundException e) {
-			return "File not found: " + filename;
-		}
-
-		String line;
-			char cellColumn = 'A';
-			String cellName;
-			String cellType;
-			for (int col = 1; col < 13; col++) {
-				for (int row = 1; row < 21; row++) {
-					cellName = "" + cellColumn + row;
-					if(!spreadsheet[row][col].fullCellText().equals("")) {
-						if(spreadsheet[row][col].abbreviatedCellText().contains("%")) {
-							cellType = "PercentCell";
-						}
-						else {
-							if(spreadsheet[row][col].fullCellText().contains("\"")) {
-								cellType = "TextCell";
-							}
-							else {
-								if(isNumeric(spreadsheet[row][col].fullCellText())) {
-									cellType = "ValueCell";
-								}
-								else {
-								
-								cellType = "FormulaCell";
-								}
-							}
-						}
-						line = cellName + "," + cellType + "," + spreadsheet[row][col].fullCellText();
-						outputFile.println(line);
-					}
-				}
-				cellColumn++;
-			}
-		
-			outputFile.close();
-
-			return this.getGridText();
-
-			}
-
-	
-	
+	}
 }
