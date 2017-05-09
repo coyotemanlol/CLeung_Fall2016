@@ -3,13 +3,11 @@ package textExcel;
 
 public class PercentCell extends RealCell {
 	
-	
-	//Constructs a new percent cell
-	public PercentCell(String userInput) {
+	public PercentCell(String userInput) { //Constructs a new Percent Cell
 		super(userInput);
 	}
 	
-	//Returns the contents of a percent cell (in percent form) truncated to ten spaces
+	//Returns the contents of a Percent Cell in the Percent format, truncated ten spaces
 	public String abbreviatedCellText() {
 		String percent = getUserInput().substring(0, getUserInput().indexOf("."));
 		percent += "%";
@@ -21,7 +19,7 @@ public class PercentCell extends RealCell {
 	}
 	
 	//Returns the non-truncated contents (in decimal form) of the cell
-	public String fullCellText() {
+	public String fullCellText() { // Returns non truncated contents into decimal format of the call
 		String returnString = "" + this.getDoubleValue();
 		return returnString;
 	}

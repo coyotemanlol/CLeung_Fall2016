@@ -4,13 +4,13 @@ public class RealCell implements Cell {
 
 	private String userInput;
 	
-	//Constructs a new real cell
+	//Constructs a new Real Cell
 	public RealCell (String contents) {
 		userInput = contents;
 	}
 	
-	//Returns the contents of the cell truncated to ten spaces
-	// Cody Leung 4-8-17 TextExcel 
+	//The cell is truncated to 10 spaces
+	 
 public String abbreviatedCellText() {
 		String newCellContents = userInput;
 		if(userInput.length() > 10) {
@@ -31,7 +31,7 @@ public String abbreviatedCellText() {
 		return newCellContents;
 	}
 	
-	//Returns the double value of a real cell
+	//Returns the Double Value of a Real Cell
 	public double getDoubleValue() {
 		return Double.parseDouble(userInput);
 	}
