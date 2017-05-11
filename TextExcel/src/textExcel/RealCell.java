@@ -4,14 +4,10 @@ public class RealCell implements Cell {
 
 	private String userInput;
 	
-	//Constructs a new Real Cell
-	public RealCell (String contents) {
+	public RealCell (String contents) { //Construct a new RealCell
 		userInput = contents;
 	}
-	
-	//The cell is truncated to 10 spaces
-	 
-public String abbreviatedCellText() {
+public String abbreviatedCellText() { // Cell truncated 10 spaces
 		String newCellContents = userInput;
 		if(userInput.length() > 10) {
 			return(userInput.substring(0, 10));
@@ -22,22 +18,15 @@ public String abbreviatedCellText() {
 			}
 			return newCellContents;
 		}
-	
 	}
-
-	//Returns the non-truncated contents of the cell
-	public String fullCellText() {
+	public String fullCellText() { // returns contents that are un-truncated from the cell
 		String newCellContents = userInput;
 		return newCellContents;
 	}
-	
-	//Returns the Double Value of a Real Cell
-	public double getDoubleValue() {
+	public double getDoubleValue() { //returns DoubleValue from the RealCell
 		return Double.parseDouble(userInput);
 	}
-	
-	//Returns the line of user input that was used to make the cell
-	public String getUserInput() {
+	public String getUserInput() {//returns user input that was used to make the Cell
 		return userInput;
 	}
 	

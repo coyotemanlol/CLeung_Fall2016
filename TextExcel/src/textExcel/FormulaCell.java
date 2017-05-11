@@ -1,17 +1,14 @@
-// Cody Leung 4-8-17 TextExcel 
 package textExcel;
 
 import java.util.Arrays;
 
 public class FormulaCell extends RealCell {
 	
-	//Constructs a new formula cell
-	public FormulaCell(String userInput) {
+	public FormulaCell(String userInput) { //constructs a new FormulaCell
 		super(userInput);
 	}
 	
-	//Returns the value of the evaluated formula truncated to ten spaces
-	public String abbreviatedCellText() {
+	public String abbreviatedCellText() { // returns the value of the formula, that is truncated to 10 spaces
 		String cellContents = "" + this.getDoubleValue();
 		String returnString = cellContents;
 		if(cellContents.length() > 10) {
@@ -25,8 +22,7 @@ public class FormulaCell extends RealCell {
 		}
 	}
 	
-	//Evaluates the formula of a formula cell
-	public double getDoubleValue() {
+	public double getDoubleValue() { // evaluates the formula from a FormulaCell
 		String [] arr = getUserInput().substring(2, getUserInput().length()-2).split(" ");
 		double value = Double.valueOf(arr[0]);	
 		for(int i = 0; i < arr.length - 1; i += 2) {
